@@ -62,11 +62,11 @@
 	transition: 0.35s transform;
 }
 
-.header .links a:hover {
+.links a:hover {
 	color: var(--primary-90);
 }
 
-.header .links a:hover::after {
+.links a:hover::after {
 	transform: scale(1);
 }
 .icons {
