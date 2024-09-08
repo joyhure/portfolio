@@ -98,3 +98,8 @@ p{
 .max__width {
 	max-width: 117.8rem;
 }
+
+/*Curseur*/
+body {
+	cursor: default;
+}

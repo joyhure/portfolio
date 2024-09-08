@@ -25,9 +25,14 @@
 }
 
 
-.header .profile .header__title {
+header .profile .header__title {
 	font-size: var(--text-title);
 	font-weight: 600;
+	cursor: default;
+
+}
+
+.links {
 	cursor: pointer;
 }
 
@@ -69,16 +74,20 @@
 .links a:hover::after {
 	transform: scale(1);
 }
+
 .icons {
 	display: none;
 }
+
 .menu__btn {
 	display: none;
 }
+
 @media screen and (max-width: 768px) {
 	.header {
 		padding: 1rem;
 	}
+
 	.header .links {
 		position: fixed;
 		width: 100%;
@@ -105,14 +114,17 @@
 		opacity: 0;
 		pointer-events: none;
 	}
+
 	.links:focus-within .header__list {
 		opacity: 1;
 		pointer-events: all;
 	}
+
 	.links:focus-within .menu__btn {
 		opacity: 0;
 		pointer-events: none;
 	}
+
 	.links:not(:hover) .header__list {
 		opacity: 0;
 		pointer-events: none;
@@ -123,9 +135,11 @@
 		flex-direction: column;
 		align-items: center;
 	}
+
 	.icons {
 		display: block;
 	}
+
 	.menu__btn {
 		display: flex;
 		justify-content: center;
@@ -147,10 +161,12 @@
 }
 
 @keyframes scroll-btn {
+
 	0%,
 	1% {
 		opacity: 0;
 	}
+
 	2% {
 		opacity: inherit;
 
