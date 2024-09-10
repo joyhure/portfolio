@@ -1,18 +1,18 @@
 /**
- * @SofiDev Esto es JSDOC, si consideras que puede ser complicado solo borralo, es un comentario, no afectará en nada
+ * @SofiDev C'est JSDOC, si tu penses que cela peut être compliqué, supprime-le simplement, c'est un commentaire, cela n'affectera rien d'autre
  * @typedef PortafolioData
- * @property {string} imgSrc Url de la imagen
- * @property {string} title Titulo de la tarjeta
- * @property {string[]} skills Array con tus habilidades ej: ['React', 'CSS', 'JavaScript']
- * @property {string} descripcion La descripcion de la tarjeta
- * @property {string} demoURL Url de una pagina de demostración
- * @property {string} repoURL Url del repositorio, ej: https://github.com/usuario/repo
- * @property {string} anim La animación que se ejecutará cuando se cargue la tarjeta, ej: fade-up, fade-right, fade-left, fade-down
- * @property {number} averageBrightness Cuanto brillo tendrá el color de fondo de la tarjeta, ej: 0.1
+ * @property {string} imgSrc URL de l'image
+ * @property {string} title Titre de la carte
+ * @property {string[]} skills Tableau de tes compétences, par exemple : ['React', 'CSS', 'JavaScript']
+ * @property {string} descripcion La description de la carte
+ * @property {string} demoURL URL d'une démonstration
+ * @property {string} repoURL URL du dépôt, par exemple : https://github.com/utilisateur/repo
+ * @property {string} anim L'animation qui sera exécutée lors du chargement de la carte, par exemple : fade-up, fade-right, fade-left, fade-down
+ * @property {number} averageBrightness La luminosité moyenne de la couleur de fond de la carte, par exemple : 0.1
  */
 
 /**
- * @SofiDev Esto es JSDOC, si consideras que puede ser complicado solo borralo, es un comentario, no afectará en nada
+ * @SofiDev C'est JSDOC, si tu penses que cela peut être compliqué, supprime-le simplement, c'est un commentaire, cela n'affectera rien d'autre
  * @type {PortafolioData[]}
  */
 export const portafolioData = [
@@ -91,14 +91,15 @@ const skillIcons = {
 };
 
 /**
- * @description Se mapea el portafolioData para que tenga los iconos de las habilidades
- * 	Puedes ver Array.map en https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+ * @description Se mapea el portafolioData pour ajouter les icônes des compétences
+ * Vous pouvez consulter Array.map sur https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
  */
 export const getPortafolioData = portafolioData.map((item) => {
 	return {
-		// Se coloca todo el contenido previo del item
+		// On garde tout le contenu précédent de l'élément
 		...item,
-		// Se cambian las skills por los iconos correspondientes
+		// On remplace les compétences par les icônes correspondantes
 		skills: item.skills.map((skill) => skillIcons[skill]),
 	};
 });
+

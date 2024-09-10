@@ -1,21 +1,12 @@
 ---
-import SocialIcons from '../SocialIcons.astro';
 import Title from '../atoms/Title.astro';
-import "./about.css"
-
-
+import './career.css';
 ---
-
-<section id="about" class="about">
-	<div class="about__container">
-		<img
-			class="about__img"
-			src="/img/hello_joy.gif"
-			alt="Image à propos Joy Huré"
-		/>
-
-		<div class="about__content">
-			<Title margin="1rem" contenu="A Propos" />
+<section id="career" class="career">
+	<div class="career__container">
+		
+		<div class="career__content">
+			<Title margin="1rem" contenu="Mon Parcours" />
 			<p class="about__text">
 				Actuellement en formation pour obtenir un <strong>BTS SIO option SLAM</strong> (Solutions Logicielles et Applications Métier) avec l'école <strong>Studi</strong>, j'envisage par la suite de poursuivre mon parcours vers une licence, puis un master MIAGE.
 
@@ -23,8 +14,16 @@ Forte d'un parcours professionnel diversifié, je souhaite aujourd'hui appliquer
 
 Mon portfolio présente divers projets sur lesquels j'ai travaillé durant ma formation, illustrant mes compétences en développement d’applications.
 			</p>
-			<SocialIcons width="25" height="25"/>
+			
 		</div>
+		<img
+			class="about__img"
+			src="/img/hello_joy.gif"
+			alt="Image à propos Joy Huré"
+		/>
 	</div>
 
 </section>
+
+
+
