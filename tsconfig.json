@@ -1,7 +1,16 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "./node_modules/astro/tsconfigs/strict",
   "compilerOptions": {
     "strictNullChecks": true,
-    "allowJs": true
-  }
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true
+  },
+  "include": [
+    "src",
+    "types/astro.d.ts"
+  ],
+  "exclude": ["node_modules"]
 }
