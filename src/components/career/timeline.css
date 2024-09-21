@@ -1,0 +1,32 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.timelineItem {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.75rem;
+}
+
+.timelineItemDotText {
+  margin-right: 8px;
+  font-size: inherit;
+  color: #6366f1;
+}
+
+.timelineItem > h3 {
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.25rem; /* 36px */
+  margin-bottom: 0.75rem;
+}
+
+.timelineItem > p {
+  font-weight: 300;
+  color: rgb(55 65 81);
+}
+
+.timelineItemOpposite {
+  text-align: end;
+}
