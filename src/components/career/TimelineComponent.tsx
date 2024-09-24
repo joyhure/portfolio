@@ -1,18 +1,3 @@
-/*import React from 'react';
-import { BeautifulTimeline, BeautifulTimelineItem } from 'react-beautiful-timeline';
-import 'react-beautiful-timeline/dist/style.css';
-
-const TimelineComponent: React.FC = () => {
-  return (
-    <BeautifulTimeline>
-      <BeautifulTimelineItem>ContenuChronologie 1</BeautifulTimelineItem>
-      <BeautifulTimelineItem>ContenuChronologie 2</BeautifulTimelineItem>
-      <BeautifulTimelineItem>ContenuChronologie 3</BeautifulTimelineItem>
-    </BeautifulTimeline>
-  );
-};
-
-export default TimelineComponent;*/
 import type { FC } from 'react';
 import {
   BeautifulTimeline as Timeline,
@@ -23,18 +8,18 @@ import '../career/timeline.css';
 
 export const App: FC<{ name: string }> = ({ name }) => {
   return (
-    <div className="" style={{ margin: '40px' }}>
+    <div className="" style={{ margin: '10px' }}>
       <Timeline
         responsiveWidth={980}
-        type="horizontal"
+        type="vertical"
         animation={true}
         passiveLineStyle={{
           background:
-            'linear-gradient(90deg, rgba(226, 226, 226, 0.04) -12.5%, #DADADA 49.02%,  rgba(226, 226, 226, 0.04) 105.63%)',
+            'linear-gradient(180deg, rgba(226, 226, 226, 0.04) -12.5%, #DADADA 49.02%,  rgba(226, 226, 226, 0.04) 105.63%)',
         }}
         activeLineStyle={{
           background:
-            'linear-gradient(90deg, rgba(131, 164, 249, 0.04) -12.5%, #A07FFD 49.02%, rgba(131, 164, 249, 0.04) 105.63%)',
+            'linear-gradient(180deg, rgba(131, 164, 249, 0.04) -12.5%, #A07FFD 49.02%, rgba(131, 164, 249, 0.04) 105.63%)',
         }}
       >
         <TimelineItem
@@ -45,18 +30,21 @@ export const App: FC<{ name: string }> = ({ name }) => {
           }}
           dotIcon={<img src={dotIcon} alt="dotIcon" />}
           dotColor="none"
-          dotText={<h1 className="timelineItemDotText">2004</h1>}
+          dotText={<h1 className="timelineItemDotText">Aujourd'hui</h1>}
         >
           <div className="timelineItem">
-            <h3>Facebook</h3>
+            <h3>BTS SIO SLAM</h3>
             <p>
-              An online social media and social networking service based in
-              Menio Park, California
+              Préparation du BTS SIO SLAM avec l'école STUDI.
+            </p>
+            <h3>Opticienne Manager</h3>
+            <p>
+              Manager du magasin Afflelou de Fréjus.
             </p>
           </div>
         </TimelineItem>
         <TimelineItem
-          dotText={<h1 className="timelineItemDotText">2005</h1>}
+          dotText={<h1 className="timelineItemDotText">2019</h1>}
           dotStyle={{
             width: '16px',
             height: '16px',
@@ -67,15 +55,14 @@ export const App: FC<{ name: string }> = ({ name }) => {
           place="opposite"
         >
           <div className="timelineItem">
-            <h3 className="timelineItemOpposite">Youtube</h3>
+            <h3 className="timelineItemOpposite">Opticienne</h3>
             <p className="timelineItemOpposite ">
-              First large-scale video sharing website that makes it easy to
-              watch videos online
+              Retour à l'optique en tant qu'opticienne chez Optic 2000 à Mandelieu la Napoule.
             </p>
           </div>
         </TimelineItem>
         <TimelineItem
-          dotText={<h1 className="timelineItemDotText">2006</h1>}
+          dotText={<h1 className="timelineItemDotText">2017</h1>}
           dotStyle={{
             width: '16px',
             height: '16px',
@@ -85,10 +72,9 @@ export const App: FC<{ name: string }> = ({ name }) => {
           dotColor="none"
         >
           <div className="timelineItem">
-            <h3>Twitter</h3>
+            <h3>Transition</h3>
             <p>
-              A service for friends, family. and coworkers to cimmunicate and
-              stay connected through the exchange of quick, frequent messages
+              Période de transition destinée à mettre en oeuvre mon projet professionnel équestre.
             </p>
           </div>
         </TimelineItem>
@@ -100,14 +86,13 @@ export const App: FC<{ name: string }> = ({ name }) => {
             height: '16px',
             background: 'none',
           }}
-          dotText={<h1 className="timelineItemDotText">2007</h1>}
+          dotText={<h1 className="timelineItemDotText">2015</h1>}
           place="opposite"
         >
           <div className="timelineItem">
-            <h3 className="timelineItemOpposite">Tumblr</h3>
+            <h3 className="timelineItemOpposite">Manager d'écurie</h3>
             <p className="timelineItemOpposite">
-              Let's you effortlessly share anything. Post text, phots, quotes,
-              links, music, and videos from your browser, phone, desktop, email
+              Gestion d'un centre équestre / écurie de propriétaires : Les Ecuries Montagne et Soleil à La Côte d'Aime.
             </p>
           </div>
         </TimelineItem>
@@ -119,14 +104,65 @@ export const App: FC<{ name: string }> = ({ name }) => {
           }}
           dotIcon={<img src={dotIcon} alt="dotIcon" />}
           dotColor="none"
-          dotText={<h1 className="timelineItemDotText">2010</h1>}
+          dotText={<h1 className="timelineItemDotText">2013</h1>}
         >
           <div className="timelineItem">
-            <h3>Instagram</h3>
+            <h3>BPJEPS Equitation Option Activités Equestres</h3>
             <p>
-              The home for visual storytelling for everyone from celebreties,
-              newrooms and brands to teens, musicians and anyone with a creative
-              passion
+             Préparation du BPJEPS Equitation Option Activités Equestres à l'ACF de St Ismier.
+            </p>
+          </div>
+        </TimelineItem>
+        <TimelineItem
+          dotIcon={<img src={dotIcon} alt="dotIcon" />}
+          dotColor="none"
+          dotStyle={{
+            width: '16px',
+            height: '16px',
+            background: 'none',
+          }}
+          dotText={<h1 className="timelineItemDotText">2012</h1>}
+          place="opposite"
+        >
+          <div className="timelineItem">
+            <h3 className="timelineItemOpposite">Opticienne</h3>
+            <p className="timelineItemOpposite">
+              Plusieurs postes d'opticienne diplômée tout d'abord à la Générale d'optique de Vigneux sur Seine puis chez Optique Sergent au sein des magasins de Moutiers et Bourg Saint Maurice.
+            </p>
+          </div>
+        </TimelineItem>
+        <TimelineItem
+          dotStyle={{
+            width: '16px',
+            height: '16px',
+            background: 'none',
+          }}
+          dotIcon={<img src={dotIcon} alt="dotIcon" />}
+          dotColor="none"
+          dotText={<h1 className="timelineItemDotText">2007</h1>}
+        >
+          <div className="timelineItem">
+            <h3>BTS OL (Opticien Lunetier)</h3>
+            <p>
+             Préparation du BTS OL à L'ICO de Bures sur Yvette. Dernière année en alternance chez Optic 2000 à Brie Comte Robert.
+            </p>
+          </div>
+        </TimelineItem>
+        <TimelineItem
+          dotIcon={<img src={dotIcon} alt="dotIcon" />}
+          dotColor="none"
+          dotStyle={{
+            width: '16px',
+            height: '16px',
+            background: 'none',
+          }}
+          dotText={<h1 className="timelineItemDotText">2003</h1>}
+          place="opposite"
+        >
+          <div className="timelineItem">
+            <h3 className="timelineItemOpposite">BAC Général Série Scientifique</h3>
+            <p className="timelineItemOpposite">
+              Préparation du BAC Général Série Scientifique au lycée Guillaume Budé de Limeil Brévannes.
             </p>
           </div>
         </TimelineItem>

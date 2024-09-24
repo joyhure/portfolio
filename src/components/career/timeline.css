@@ -11,20 +11,23 @@
 }
 
 .timelineItemDotText {
-  margin-right: 8px;
-  font-size: inherit;
-  color: #6366f1;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-size: 1.75rem; /* 18px */
+  color: #D058EA;
 }
 
 .timelineItem > h3 {
   font-size: 1.875rem; /* 30px */
   line-height: 2.25rem; /* 36px */
   margin-bottom: 0.75rem;
+  color: #6EDBFB;
 }
 
 .timelineItem > p {
   font-weight: 300;
-  color: rgb(55 65 81);
+  color: #97A5F4;
+  margin-bottom: 2rem;
 }
 
 .timelineItemOpposite {
