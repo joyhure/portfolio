@@ -2,22 +2,23 @@
 import Title from '../atoms/Title.astro';
 import Timeline from './components/timeline.tsx';
 import './career.css';
+import TimelineApp from '../career/TimelineApp.tsx'; 
 ---
 
 <section id="career" class="career">
-  
-  <div class="career__container">
-	
-    <div class="career__content">
-		<Title margin="1rem" contenu="Mon Parcours" />
-		début
-      <Timeline />
-	  Fin
-    </div>
-    <img
-      class="about__img"
-      src="/img/parcours.gif"
-      alt="Image à propos Joy Huré"
-    />
-  </div>
+	<div class="career__container">
+		<div class="career__content">
+			<Title margin="1rem" contenu="Mon Parcours" />
+			<div id="timeline-root"></div> <!--Conteneur pour le composant React -->
+			<TimelineApp client:only="react" />
+		</div>
+		<img
+			class="about__img"
+			src="/img/parcours.gif"
+			alt="Image à propos Joy Huré"
+		/>
+	</div>
 </section>
+
+
+

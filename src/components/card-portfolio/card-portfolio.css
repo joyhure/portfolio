@@ -15,7 +15,7 @@
 	background: #000;
 }
 
-.card__portfolio .descripcion__container {
+.card__portfolio .description__container {
 	position: absolute;
 	display: flex;
 	flex-direction: column;
@@ -30,12 +30,12 @@
 	color: var(--on-primary);
 }
 
-.card__portfolio:hover .descripcion__container {
+.card__portfolio:hover .description__container {
 	transform: translateY(0%);
 	padding-top: 55px;
 }
 
-.card__portfolio .descripcion__container .card__title {
+.card__portfolio .description__container .card__title {
 	position: absolute;
 	display: block;
 	width: max-content;
@@ -52,13 +52,13 @@
 	transition-property: background, transform;
 }
 
-.card__portfolio:hover .descripcion__container .card__title {
+.card__portfolio:hover .description__container .card__title {
 	transform: translateY(11%);
 	backdrop-filter: none;
 	background: #0000;
 }
 
-.card__portfolio .descripcion {
+.card__portfolio .description {
 	padding: 0 22px;
 	display: flex;
 	width: 100%;
@@ -67,7 +67,7 @@
 	gap: 10px;
 }
 
-.card__portfolio .descripcion p {
+.card__portfolio .description p {
 	font-size: var(--text-medium);
 	white-space: nowrap;
 	overflow: hidden;
@@ -76,20 +76,20 @@
 	transition: 0.35s height;
 }
 
-.card__portfolio:hover .descripcion p {
+.card__portfolio:hover .description p {
 	overflow: auto;
 	white-space: wrap;
 	height: 90px;
 	max-height: 90px;
 }
 
-.card__portfolio .descripcion p::-webkit-scrollbar {
+.card__portfolio .description p::-webkit-scrollbar {
 	width: 4px;
 	background: var(--surface);
 	border-radius: 4px;
 }
 
-.card__portfolio .descripcion p::-webkit-scrollbar-thumb {
+.card__portfolio .description p::-webkit-scrollbar-thumb {
 	width: 2px;
 	background: var(--primary);
 	border-radius: 4px;
