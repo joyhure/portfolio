@@ -1,30 +1,20 @@
 ---
 import Title from './atoms/Title.astro';
-import { getPortafolioData} from "./data/portfolioData.js"
+import { getPortafolioData } from './data/portfolioData.js';
 import Card from './card-portfolio/CardPortfolio.astro';
 ---
 
 <section
 	id="projects"
-	class="flex flex-col w-full  justify-center items-center h-auto min-h-[100dvh]  "
+	class="flex flex-col w-full h-full justify-center items-center h-auto min-h-[100dvh]"
 >
 	<div class="portfolio__container">
-		<Title contenu="Projets" />
+		<Title margin="2rem" contenu="Projets" class="title-centered" />
 		<div class="portfolio__elements">
 			{getPortafolioData.map((props) => <Card {...props} />)}
 		</div>
 	</div>
 </section>
-
-<style>
-	.portfolio__elements {
-		max-width: var(--max-width);
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-		gap: 4rem;
-	}
-</style>
 
 <script>
 	import { getIMGAverageColor } from '../utils/average-img-color/average-img-color';
@@ -45,3 +35,24 @@ import Card from './card-portfolio/CardPortfolio.astro';
 		$img.onload = setBg;
 	});
 </script>
+
+<style>
+	.portfolio__elements {
+		max-width: var(--max-width);
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 4rem;
+	}
+
+	.portfolio__container {
+		max-width: var(--max-width);
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: 5rem auto;
+	}
+	section {
+		margin-bottom: 10rem;
+	}
+</style>

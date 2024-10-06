@@ -1,14 +1,14 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header/Header.astro';
+import { mainMenu } from '../components/data/menuData';
+import Hero from '../components/hero/Hero.astro';
 import About from '../components/About/About.astro';
 import Career from '../components/career/Career.astro';
-import BlogHome from '../components/BlogHome.astro';
-import { mainMenu } from '../components/data/menuData';
-import Footer from '../components/Footer/Footer.astro';
-import Header from '../components/header/Header.astro';
-import Hero from '../components/hero/Hero.astro';
-import Projects from '../components/Projects.astro';
 import Skills from '../components/skills/Skills.astro';
-import Layout from '../layouts/Layout.astro';
+import Projects from '../components/Projects.astro';
+import Exam from '../components/Exam.astro';
+import Footer from '../components/Footer/Footer.astro';
 ---
 
 <Layout title="Joy Huré">
@@ -19,7 +19,7 @@ import Layout from '../layouts/Layout.astro';
 		<Career />
 		<Skills />
 		<Projects />
-		<BlogHome />
+		<Exam />
 	</main>
 	<Footer/>
 </Layout>
