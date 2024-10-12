@@ -3,19 +3,19 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import BTSLayout from '../../layouts/BTSLayout.astro';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('bts');
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
+	const btspages = await getCollection('bts');
+	return btspages.map((btspage) => ({
+		params: { slug: btspage.slug },
+		props: btspage,
 	}));
 }
 type Props = CollectionEntry<'bts'>;
 
-const post = Astro.props;
-const { Content } = await post.render();
+const btspage = Astro.props;
+const { Content } = await btspage.render();
 ---
 
-<BTSLayout {...post.data}>
+<BTSLayout {...btspage.data}>
 	<Content />
 </BTSLayout>
 
