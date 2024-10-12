@@ -1,36 +1,28 @@
 ---
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-import CardBlog from '../../components/CardBlog.astro';
+import BTSCards from '../../components/BTSCards.astro';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/header/Header.astro';
-import { menuBlog } from '../../components/data/menuData';
+import { menuBTS } from '../../components/data/menuData';
 import Footer from '../../components/Footer/Footer.astro';
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const btspages = await getCollection('bts');
 ---
 
-<Layout title="blog">
-	<Header origin={menuBlog} name="Jhon Doe" />
+<Layout title="bts">
+	<Header origin={menuBTS} name="Joy Huré" />
 	<main class="self-center w-full">
 		<section class="blog__section min-h-[100dvh]">
 			<ul class="blog__elements">
 				{
-					posts.map((post) => (
+					btspages.map((btspage) => (
 						<li>
-							<CardBlog
-								title={post.data.title}
-								content={post.data.description}
-								img={post.data.heroImage}
-								href={`/blog/${post.slug}/`}
+							<BTSCards
+								title={btspage.data.title}
+								content={btspage.data.description}
+								img={btspage.data.heroImage}
+								href={`/bts/${btspage.slug}/`}
 							>
-								<FormattedDate
-									slot="date"
-									clase="text-[--secondary-90] font-bold font-xl"
-									date={post.data.pubDate}
-								/>
-							</CardBlog>
+							</BTSCards>
 						</li>
 					))
 				}

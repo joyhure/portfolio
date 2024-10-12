@@ -1,11 +1,9 @@
 ---
 import Title from './atoms/Title.astro';
 import { getCollection } from 'astro:content';
-import FormattedDate from './FormattedDate.astro';
-import CardBlog from './CardBlog.astro';
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+import BTSCards from './BTSCards.astro';
+
+const btspages = await getCollection('bts');
 ---
 
 <section
@@ -18,19 +16,14 @@ const posts = (await getCollection('blog')).sort(
 			class="flex self-center gap-[20px] justify-center min-w-[30rem] md:max-w-full flex-wrap flex-col md:flex-row"
 		>
 			{
-				posts.slice(0, 3).map((post) => (
-					<CardBlog
-						title={post.data.title}
-						content={post.data.description}
-						img={post.data.heroImage}
-						href={`/blog/${post.slug}/`}
+				btspages.slice(0, 3).map((btspage) => (
+					<BTSCards
+						title={btspage.data.title}
+						content={btspage.data.description}
+						img={btspage.data.heroImage}
+						href={`/bts/${btspage.slug}/`}
 					>
-						<FormattedDate
-							slot="date"
-							clase="text-white"
-							date={post.data.pubDate}
-						/>
-					</CardBlog>
+					</BTSCards>
 				))
 			}
 		</div>
