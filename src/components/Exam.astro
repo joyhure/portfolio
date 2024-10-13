@@ -13,7 +13,7 @@ const btspages = await getCollection('bts');
 	<div class="exam__container">
 		<Title margin="2rem" contenu="BTS SIO SLAM" />
 		<div
-			class="flex self-center gap-[20px] justify-center min-w-[30rem] md:max-w-full flex-wrap flex-col md:flex-row"
+			class="btscards__container"
 		>
 			{
 				btspages.slice(0, 3).map((btspage) => (
@@ -40,5 +40,15 @@ const btspages = await getCollection('bts');
 	}
 	section {
 		margin-bottom: 5rem;
+	}
+
+	.btscards__container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 3rem;
+		width: 100%;
+		max-width: 1371px;
 	}
 </style>
