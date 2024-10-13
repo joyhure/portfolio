@@ -18,9 +18,7 @@ const { title, img, content, href } = Astro.props;
 		<h2 class="text--hover text-[1.8rem] font-semibold text-white">
 			{title}
 		</h2>
-		<p
-			class="whitespace-nowrap overflow-hidden overflow-ellipsis mt-2 text-[1.3rem] text-white"
-		>
+		<p class="card__content">
 			{content}
 		</p>
 		<slot name="date" />
@@ -33,5 +31,11 @@ const { title, img, content, href } = Astro.props;
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
+	}
+
+	.card__content {
+   		margin-top: 2rem;
+    	font-size: 1.3rem;
+    	color: #E0C4F4;
 	}
 </style>

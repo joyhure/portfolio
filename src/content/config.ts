@@ -6,6 +6,7 @@ const bts = defineCollection({
 		title: z.string(),
 		description: z.string().optional(),
 		heroImage: z.string().optional(),
+		position: z.number(),
 	}),
 });
 

@@ -3,6 +3,7 @@ title: "Autres réalisations"
 description: "Réalisations et TP accomplis durant ma formation"
 heroImage: "../img/girl1.jpg"
 slug: "realisations"
+position: 2
 ---
 
 ## JavaScript: Explorando Funciones y Comprendiendo Variables

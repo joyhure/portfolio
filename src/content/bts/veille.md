@@ -3,6 +3,7 @@ title: "Veille Technologique"
 description: "Moyens mis en oeuvre pour assurer une veille technologique."
 heroImage: "../img/monachina2.jpg"
 slug: "veille"
+position: 3
 ---
 
 ## JavaScript: Explorando Funciones y Comprendiendo Variables

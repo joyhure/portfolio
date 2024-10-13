@@ -3,7 +3,8 @@ import Title from './atoms/Title.astro';
 import { getCollection } from 'astro:content';
 import BTSCards from './BTSCards.astro';
 
-const btspages = await getCollection('bts');
+// Récupérez et triez les pages BTS par position
+const btspages = (await getCollection('bts')).sort((a, b) => a.data.position - b.data.position);
 ---
 
 <section

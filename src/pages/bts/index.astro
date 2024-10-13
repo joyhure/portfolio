@@ -5,7 +5,8 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/header/Header.astro';
 import { menuBTS } from '../../components/data/menuData';
 import Footer from '../../components/Footer/Footer.astro';
-const btspages = await getCollection('bts');
+
+const btspages = (await getCollection('bts')).sort((a, b) => a.data.position - b.data.position);
 ---
 
 <Layout title="bts">
