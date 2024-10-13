@@ -1,19 +1,13 @@
 ---
 const { title, img, content, href } = Astro.props;
 ---
-<a
-	href={href}
-	class="card__parent group block rounded-[22px] max-w-[32.8rem] h-[26.6rem] overflow-hidden hover:shadow-lg"
->
+
+<a href={href} class="card__parent">
 	<div class="w-full h-[14rem] overflow-hidden">
-		<img
-			alt={title}
-			src={img}
-			class="group-hover:scale-125 group-hover:saturate-50 h-56 w-full rounded-bl-xl object-cover sm:h-[19.1rem] lg:h-72 transition-transform ease-in-out delay-150"
-		/>
+		<img alt={title} src={img} class="image" />
 	</div>
 	<div
-		class="flex-col items-start justify-center text-left p-4 bg-gradient-radial from-[#8b65fdde] to-[#3b236d]  rounded-b-xl gap-4 group-hover:bg-gradient-radial group-hover:from-[#4b3788de] group-hover:to-[#261746] h-[18rem]"
+		class="flex-col items-start justify-center text-left p-4 bg-gradient-radial from-[#8b65fdde] to-[#3b236d] rounded-b-xl gap-4 group-hover:bg-gradient-radial group-hover:from-[#4b3788de] group-hover:to-[#261746] h-[18rem]"
 	>
 		<h2 class="text--hover text-[1.8rem] font-semibold text-white">
 			{title}
@@ -25,17 +19,61 @@ const { title, img, content, href } = Astro.props;
 	</div>
 </a>
 
-<style>
-	.card__parent:hover .text--hover{
+<style scoped>
+	/*layout*/
+	.card__parent:hover .text--hover {
 		background: var(--text-gradient);
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
 
+	.card__parent:hover .image {
+		transform: scale(1.25);
+		filter: saturate(50%);
+	}
+
+	.card__parent {
+		width: 30%;
+		display: block;
+		border-radius: 22px;
+		max-width: 32.8rem;
+		height: 26.6rem;
+		overflow: hidden;
+		transition: box-shadow 0.3s ease;
+	}
+
 	.card__content {
-   		margin-top: 2rem;
-    	font-size: 1.3rem;
-    	color: #E0C4F4;
+		margin-top: 2rem;
+		font-size: 1.3rem;
+		color: #e0c4f4;
+	}
+
+	.card__parent:hover {
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	}
+	/*utils*/
+	.image {
+		height: 14rem; /* 56px */
+		width: 100%;
+		border-bottom-left-radius: 1rem; /* rounded-bl-xl */
+		object-fit: cover;
+		transition:
+			transform 0.15s ease-in-out,
+			filter 0.15s ease-in-out;
+	}
+
+	@media (min-width: 640px) {
+		/* sm:h-[19.1rem] */
+		.image {
+			height: 19.1rem;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		/* lg:h-72 */
+		.image {
+			height: 18rem; /* 72px */
+		}
 	}
 </style>

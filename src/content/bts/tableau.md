@@ -1,7 +1,7 @@
 ---
 title: "Tableau de synthèse du BTS"
 description: ""
-heroImage: "../img/paisaje.jpg"
+heroImage: "../img/competences.jpg"
 slug: "tableau"
 position: 1
 ---
@@ -9,7 +9,7 @@ position: 1
 
 
 
-![javascript image](/img/monachina.jpg)
+![javascript image](/img/competences.jpg)
 
 En esta segunda entrega de nuestra guía práctica de JavaScript, nos sumergiremos en el fascinante mundo de las funciones y exploraremos las sutilezas entre `var`, `let` y `const`. Prepárate para desentrañar estos conceptos cruciales en tu viaje por el desarrollo web.
 
