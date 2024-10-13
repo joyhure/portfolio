@@ -1,13 +1,13 @@
 ---
-title: "Tableau de synthèse du BTS"
-description: ""
-heroImage: "../img/paisaje.jpg"
+title: "Veille Technologique"
+description: "Moyens mis en oeuvre pour assurer une veille technologique."
+heroImage: "../img/monachina2.jpg"
+slug: "veille"
 ---
 
+## JavaScript: Explorando Funciones y Comprendiendo Variables
 
-
-
-![javascript image](/img/monachina.jpg)
+![javascript image](/img/monachina2.jpg)
 
 En esta segunda entrega de nuestra guía práctica de JavaScript, nos sumergiremos en el fascinante mundo de las funciones y exploraremos las sutilezas entre `var`, `let` y `const`. Prepárate para desentrañar estos conceptos cruciales en tu viaje por el desarrollo web.
 
@@ -58,7 +58,6 @@ saludar("Ana");
 // Salida: ¡Hola, Ana!
 ```
 
-
 #### Arrow Functions
 
 ```javascript
@@ -70,9 +69,7 @@ let producto = multiplicar(4, 6);
 
 Las funciones de flecha (`arrow functions`) son una forma más concisa de escribir funciones.
 
-### Variables: var, let y const
-
-![javascript image](/img/monachina.jpg)
+## Variables: var, let y const
 
 ### `var`
 

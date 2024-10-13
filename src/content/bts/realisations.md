@@ -1,9 +1,8 @@
 ---
-title: "JavaScript:Funciones y ambito de las variables"
-description: "Funciones y Comprendiendo Variables"
-pubDate: 'Apr 14 2024'
-updatedDate: 'Apr 24 2024'
+title: "Autres réalisations"
+description: "Réalisations et TP accomplis durant ma formation"
 heroImage: "../img/girl1.jpg"
+slug: "realisations"
 ---
 
 ## JavaScript: Explorando Funciones y Comprendiendo Variables
