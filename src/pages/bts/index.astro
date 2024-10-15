@@ -22,6 +22,7 @@ const btspages = (await getCollection('bts')).sort((a, b) => a.data.position - b
 								content={btspage.data.description}
 								img={btspage.data.heroImage}
 								href={`/bts/${btspage.slug}/`}
+								link={btspage.data.link}
 							>
 							</BTSCards>
 						</li>

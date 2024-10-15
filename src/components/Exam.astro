@@ -28,10 +28,12 @@ const btspages = (await getCollection('bts')).sort((a, b) => a.data.position - b
 				))
 			}
 		</div>
+		<a href="../../docs/tableau_synthese.pdf" target="_blank" rel="noopener noreferrer" class="table-link"><iconify-icon icon="mdi:file-pdf-box" class="icon-link" width="35" height="35"></iconify-icon></a>
 	</div>
 </section>
 
 <style>
+	/*layout*/
 	.exam__container {
 		max-width: var(--max-width);
 		display: flex;
@@ -52,4 +54,21 @@ const btspages = (await getCollection('bts')).sort((a, b) => a.data.position - b
 		width: 100%;
 		max-width: 1371px;
 	}
+
+	/*wrappers*/
+	.table-link {
+		margin-left: 2rem;
+	}
+
+	/*utils*/
+	.icon-link {
+		color: #dcd8fc;
+		width: 24px;
+		height: 24px;
+	}
+
+	.icon-link:hover {
+		color: #BEE7F5;
+	}
+
 </style>

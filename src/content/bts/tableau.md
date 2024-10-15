@@ -1,7 +1,7 @@
 ---
 title: "Tableau de synthèse du BTS"
-description: ""
-heroImage: "../img/competences.jpg"
+description: "Tableau de synthèse interactif"
+heroImage: "../img/competence.jpg"
 slug: "tableau"
 position: 1
 ---
