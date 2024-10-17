@@ -18,7 +18,7 @@ export const menuBTS = [
 export const tableauData = {
      title: "Tableau de synthèse du BTS",
      description: "Tableau de synthèse interactif",
-     heroImage: "../img/competence.jpg",
+     heroImage: "/src/pages/bts/img/competence.jpg",
      slug: "tableau",
      position: 1
 };
@@ -26,7 +26,7 @@ export const tableauData = {
 export const veilleData = {
      title: "Autres réalisations",
      description: "Réalisations et TP accomplis durant ma formation",
-     heroImage: "../img/realisation1.jpg",
+     heroImage: "/src/pages/bts/img/realisation.jpg",
      slug: "realisations",
      position: 2
 };
@@ -34,7 +34,7 @@ export const veilleData = {
 export const realisationsData = {
      title: "Veille Technologique",
      description: "Moyens mis en oeuvre pour assurer une veille technologique",
-     heroImage: "../img/veille.jpg",
+     heroImage: "/src/pages/bts/img/veille.jpg",
      slug: "veille",
      position: 3
 };

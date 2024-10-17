@@ -5,6 +5,7 @@ import Header from '../../components/header/Header.astro';
 import { menuBTS, tableauData, veilleData, realisationsData } from '../../components/data/menuData';
 import Footer from '../../components/Footer/Footer.astro';
 
+// Créer un tableau des pages BTS triées par position
 const btspages = [tableauData, veilleData, realisationsData].sort((a, b) => a.position - b.position);
 ---
 
