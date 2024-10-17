@@ -1,10 +1,10 @@
 ---
 import Title from './atoms/Title.astro';
-import { getCollection } from 'astro:content';
+import { tableauData, veilleData, realisationsData } from './data/menuData';
 import BTSCards from './BTSCards.astro';
 
 // Récupérez et triez les pages BTS par position
-const btspages = (await getCollection('bts')).sort((a, b) => a.data.position - b.data.position);
+const btspages = [tableauData, veilleData, realisationsData].sort((a, b) => a.position - b.position);
 ---
 
 <section
@@ -19,9 +19,9 @@ const btspages = (await getCollection('bts')).sort((a, b) => a.data.position - b
 			{
 				btspages.slice(0, 3).map((btspage) => (
 					<BTSCards
-						title={btspage.data.title}
-						content={btspage.data.description}
-						img={btspage.data.heroImage}
+						title={btspage.title}
+						content={btspage.description}
+						img={btspage.heroImage}
 						href={`/bts/${btspage.slug}/`}
 					>
 					</BTSCards>
