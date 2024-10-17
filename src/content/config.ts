@@ -5,7 +5,7 @@ const bts = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string().optional(),
-		heroImage: z.string().optional(),
+		heroImage: z.string(),
 		position: z.number(),
 	}),
 });

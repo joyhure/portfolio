@@ -1,0 +1,65 @@
+---
+import { tableauData } from '../../components/data/menuData';
+
+const { title, description, heroImage } = tableauData;
+---
+
+<section id="tableau" class="flex flex-col items-center w-full h-full md:max-w-full justify-center flex-wrap px-4">
+  <div class="tableau__container">
+    <h1>{title}</h1>
+    <p>{description}</p>
+    <img src={heroImage} alt={title} />
+    <!-- Contenu spécifique à la page tableau -->
+    <table>
+      <thead>
+        <tr>
+          <th>Compétence</th>
+          <th>Description</th>
+          <th>Ressources</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>JavaScript</td>
+          <td>Langage de programmation pour le web</td>
+          <td>
+            <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
+              <iconify-icon icon="mdi:language-javascript" width="24" height="24"></iconify-icon>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>HTML</td>
+          <td>Langage de balisage pour créer des pages web</td>
+          <td>
+            <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
+              <iconify-icon icon="mdi:language-html5" width="24" height="24"></iconify-icon>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+          <td>Langage de style pour la présentation des pages web</td>
+          <td>
+            <a href="https://developer.mozilla.org/fr/docs/Web/CSS" target="_blank" rel="noopener noreferrer">
+              <iconify-icon icon="mdi:language-css3" width="24" height="24"></iconify-icon>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<style>
+  .tableau__container {
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 5rem auto;
+  }
+  section {
+    margin-bottom: 5rem;
+  }
+</style>
