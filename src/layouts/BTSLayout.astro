@@ -1,11 +1,14 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import {  menuBTS } from "../components/data/menuData";
-const { title, description, heroImage } = Astro.props;
-type Props = CollectionEntry<"bts">["data"];
 import "../styles/global.css"
 import Header from "../components/header/Header.astro";
 import Footer from "../components/Footer/Footer.astro";
+import Tableau from "../content/bts/Tableau.astro";
+import Realisations from "../content/bts/Realisations.astro";
+import Veille from "../content/bts/Veille.astro";
+
+const { title, slug } = Astro.props;
 ---
 
 <!doctype html>
@@ -30,6 +33,9 @@ import Footer from "../components/Footer/Footer.astro";
         <h1 class="text-4xl text-center font-extrabold color__gradiente mb-3" >{title}</h1>
       </div>
       <section class="flex flex-col md:max-w-[57%]  max-w-[100%] min-w-[30rem]  px-5 pt-10 pb-[3rem] justify-center w-[80%">
+        {slug === "tableau" && <Tableau {...Astro.props} />}
+        {slug === "realisations" && <Realisations {...Astro.props} />}
+        {slug === "veille" && <Veille {...Astro.props} />}
         <slot />
       </section>
     </main>
