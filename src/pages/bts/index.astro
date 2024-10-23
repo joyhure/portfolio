@@ -1,11 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
 import BTSCards from '../../components/BTSCards.astro';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/header/Header.astro';
-import { menuBTS } from '../../components/data/menuData';
+import { menuBTS, tableauData, veilleData, realisationsData } from '../../components/data/menuData';
 import Footer from '../../components/Footer/Footer.astro';
-const btspages = await getCollection('bts');
+
+// Créer un tableau des pages BTS triées par position
+const btspages = [tableauData, veilleData, realisationsData].sort((a, b) => a.position - b.position);
 ---
 
 <Layout title="bts">
@@ -17,10 +18,10 @@ const btspages = await getCollection('bts');
 					btspages.map((btspage) => (
 						<li>
 							<BTSCards
-								title={btspage.data.title}
-								content={btspage.data.description}
-								img={btspage.data.heroImage}
-								href={`/bts/${btspage.slug}/`}
+								title={btspage.title}
+								content={btspage.description}
+								img={btspage.heroImage}
+								href={`/bts/${btspage.slug}/`}								
 							>
 							</BTSCards>
 						</li>
