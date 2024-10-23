@@ -32,7 +32,7 @@ const { title, slug } = Astro.props;
       <div class="text-center" >
         <h1 class="text-4xl text-center font-extrabold color__gradiente mb-3" >{title}</h1>
       </div>
-      <section class="flex flex-col md:max-w-[57%]  max-w-[100%] min-w-[30rem]  px-5 pt-10 pb-[3rem] justify-center w-[80%">
+      <section class="flex flex-col md:max-w-[70%]  max-w-[100%] min-w-[30rem]  px-5 pt-10 pb-[3rem] justify-center w-[80%">
         {slug === "tableau" && <Tableau {...Astro.props} />}
         {slug === "realisations" && <Realisations {...Astro.props} />}
         {slug === "veille" && <Veille {...Astro.props} />}
