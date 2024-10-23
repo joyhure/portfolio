@@ -9,106 +9,242 @@ import '../../styles/global.css';
 	<div class="tableau__container">
 		<table>
 			<tr>
-				<th>Compétences</th>
-				<th>Réalisation en cours de formation</th>
-				<th>Réalisation en milieu professionnel - 1ère année</th>
-				<th>Réalisation en milieu professionnel - 2ème année</th>
+				<th class="diagonal-cell titles">
+                    <span class="top-right">Compétences</span>
+                    <span class="bottom-left">Réalisations</span>
+                </th>
+				<th class="titles periode">Période</th>
+				<th class="titles case">Gérer le patrimoine informatique</th>
+				<th class="titles case">Répondre aux incidents et aux demandes d'assistance et d'évolution</th>
+				<th class="titles case">Développer la présence en ligne de l'organisation</th>
+				<th class="titles case">Travailler en mode projet</th>
+				<th class="titles case">Mettre à disposition des utilisateurs un service informatique</th>
+				<th class="titles case">Organiser son développement professionnel</th>
 			</tr>
 			<tr>
-				<td>Gérer le patrimoine informatique</td>
-				<td>Recenser et identifier les ressources numériques</td>
-				<td>Exploiter des référentiels, normes et standards</td>
-				<td>Mettre en place et vérifier les habilitations</td>
+				<th colspan="8" class="subtitle">Réalisations en cours de formation</th>
 			</tr>
 			<tr>
-				<td>Répondre aux incidents et demandes d'assistance</td>
-				<td>Collecter, suivre et orienter des demandes</td>
-				<td
-					>Traiter les demandes concernant les services réseau et
-					système</td
-				>
-				<td>Traiter les demandes concernant les applications</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
 			</tr>
 			<tr>
-				<td>Développer la présence en ligne de l'organisation</td>
-				<td
-					>Participer à la valorisation de l'image sur les médias
-					numériques</td
-				>
-				<td
-					>Référencer les services en ligne et mesurer la visibilité</td
-				>
-				<td
-					>Participer à l'évolution d'un site Web exploitant les
-					données de l'organisation</td
-				>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
 			</tr>
 			<tr>
-				<td>Travailler en mode projet</td>
-				<td
-					>Analyser les objectifs et les modalités d'organisation d'un
-					projet</td
-				>
-				<td>Planifier les activités</td>
-				<td>Évaluer les indicateurs de suivi et analyser les écarts</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
 			</tr>
 			<tr>
-				<td
-					>Mettre à disposition des utilisateurs un service
-					informatique</td
-				>
-				<td
-					>Réaliser les tests d'intégration et d'acceptation d'un
-					service</td
-				>
-				<td>Déployer un service</td>
-				<td
-					>Accompagner les utilisateurs dans la mise en place d'un
-					service</td
-				>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
 			</tr>
 			<tr>
-				<td>Organiser son développement professionnel</td>
-				<td
-					>Mettre en place son environnement d'apprentissage personnel</td
-				>
-				<td>Mettre en œuvre des outils et stratégies de veille</td>
-				<td>Développer son projet professionnel</td>
+				<th colspan="8" class="subtitle">Réalisations en milieu professionnel</th>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
 			</tr>
 		</table>
 	</div>
 </section>
 
 <style scoped>
+	/*layout*/
 	.tableau__container {
-		max-width: var(--max-width);
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		margin: 5rem auto;
+		margin: 2rem 0;
+        box-shadow: 0 20px 32px rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+        overflow: hidden;
 	}
+
 	section {
 		margin-bottom: 5rem;
+		width: 100%;
 	}
 
 	table {
 		width: 100%;
 		border-collapse: collapse;
+		border-radius: 10px;
+		overflow: hidden;
+		border: none;
 	}
-	table,
+
+	/*wrappers*/
 	th,
 	td {
-		border: 1px solid rgb(156, 116, 138);
+		border: 1px solid #54346B;
+        padding: 10px;
+        text-align: left;
 	}
-	th,
-	td {
-		padding: 10px;
-		text-align: left;
-	}
+	
 	th {
 		background-color: #f2f2f2;
+		vertical-align: middle;
+		text-align: center;
+		padding: 10px;
+		font-weight: bold;
+		
 	}
+
   td{
     color: #f2f2f2;
+	padding: 10px;
+	text-align: left;
+	background-color: #ECD9FA;
+	color: #131313;
   }
+
+  .diagonal-cell {
+        position: relative;
+        width: 25rem;
+        height: auto;
+    }
+
+	.diagonal-cell::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top right, transparent 49.75%, #54346B 49.9%, #54346B 50.1%, transparent 50.25%);
+        z-index: 1;
+    }
+
+    .diagonal-cell .top-right,
+    .diagonal-cell .bottom-left {
+        position: absolute;
+        width: 50%;
+        height: 50%;
+        z-index: 2;
+		display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .diagonal-cell .top-right {
+        top: 0;
+        right: 0;
+    }
+
+    .diagonal-cell .bottom-left {
+        bottom: 0;
+        left: 0;
+    }
+
+	.periode {
+		width: 12rem;
+
+	}
+
+	.case {
+		width: 120px;
+	}
+
+	/*utils*/
+	 /* Enlever les bordures extérieures */
+	 table tr:first-child th {
+        border-top: none;
+    }
+    table tr:last-child td {
+        border-bottom: none;
+    }
+    table tr td:first-child,
+    table tr th:first-child {
+        border-left: none;
+    }
+    table tr td:last-child,
+    table tr th:last-child {
+        border-right: none;
+    }
+	.titles {
+		background-color: #131313;
+		color: #E2DDFE;
+		font-size: 1.3rem;
+	}
+	.subtitle {
+		background-color: #54346B;
+		color: #E2DDFE;
+		font-size: 1.3rem;
+	}
+
+	/* Shadows */
+    th 
+	{
+        box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    td {
+        box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.1);
+    }
+	
+
 </style>
