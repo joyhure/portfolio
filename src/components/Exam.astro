@@ -4,7 +4,9 @@ import { tableauData, veilleData, realisationsData } from './data/menuData';
 import BTSCards from './BTSCards.astro';
 
 // Récupérez et triez les pages BTS par position
-const btspages = [tableauData, veilleData, realisationsData].sort((a, b) => a.position - b.position);
+const btspages = [tableauData, veilleData, realisationsData].sort(
+	(a, b) => a.position - b.position
+);
 ---
 
 <section
@@ -13,22 +15,31 @@ const btspages = [tableauData, veilleData, realisationsData].sort((a, b) => a.po
 >
 	<div class="exam__container">
 		<Title margin="2rem" contenu="BTS SIO SLAM" />
-		<div
-			class="btscards__container"
-		>
+		<div class="btscards__container">
 			{
-				btspages.slice(0, 3).map((btspage) => (
-					<BTSCards
-						title={btspage.title}
-						content={btspage.description}
-						img={btspage.heroImage}
-						href={`/bts/${btspage.slug}/`}
-					>
-					</BTSCards>
-				))
+				btspages
+					.slice(0, 3)
+					.map((btspage) => (
+						<BTSCards
+							title={btspage.title}
+							content={btspage.description}
+							img={btspage.heroImage}
+							href={`/bts/${btspage.slug}/`}
+						></BTSCards>
+					))
 			}
 		</div>
-		<a href="../../docs/tableau_synthese.pdf" target="_blank" rel="noopener noreferrer" class="table-link"><iconify-icon icon="mdi:file-pdf-box" class="icon-link" width="35" height="35"></iconify-icon></a>
+			<a
+				href="../../docs/tableau_synthese.pdf"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="table-link"
+				><iconify-icon
+					icon="mdi:file-pdf-box"
+					class="icon-link"
+					width="35"
+					height="35"></iconify-icon><h2 class="content">Tableau de Synthèse</h2></a
+			>
 	</div>
 </section>
 
@@ -58,17 +69,27 @@ const btspages = [tableauData, veilleData, realisationsData].sort((a, b) => a.po
 	/*wrappers*/
 	.table-link {
 		margin-left: 2rem;
+		margin-top: 2rem;
+		display: flex;
+		flex-direction: row;
+		font-size: 1.3rem;
+		color: #bee7f5;
+		vertical-align: center;
+	}
+
+	.table-link:hover {
+		color: #4CCCE6;
 	}
 
 	/*utils*/
 	.icon-link {
-		color: #dcd8fc;
 		width: 24px;
 		height: 24px;
 	}
 
-	.icon-link:hover {
-		color: #BEE7F5;
+	.content {
+	margin-left: 2rem;
+	align-self: center;
+	padding-top: 0.75rem;
 	}
-
 </style>
