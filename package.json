@@ -45,5 +45,8 @@
   "bugs": {
     "url": "https://github.com/SofiDevO/portfolio-astrosofidev-garrux/issues"
   },
-  "homepage": "https://github.com/SofiDevO/portfolio-astrosofidev-garrux#readme"
+  "homepage": "https://github.com/SofiDevO/portfolio-astrosofidev-garrux#readme",
+  "devDependencies": {
+    "astro": "^4.6.1"
+  }
 }
