@@ -10,62 +10,77 @@ import '../../styles/global.css';
 		<table>
 			<tr>
 				<th class="diagonal-cell titles">
-                    <span class="top-right">Compétences</span>
-                    <span class="bottom-left">Réalisations</span>
-                </th>
+					<span class="top-right">Compétences</span>
+					<span class="bottom-left">Réalisations</span>
+				</th>
 				<th class="titles periode">Période</th>
 				<th class="titles case">Gérer le patrimoine informatique</th>
-				<th class="titles case">Répondre aux incidents et aux demandes d'assistance et d'évolution</th>
-				<th class="titles case">Développer la présence en ligne de l'organisation</th>
+				<th class="titles case"
+					>Répondre aux incidents et aux demandes d'assistance et
+					d'évolution</th
+				>
+				<th class="titles case"
+					>Développer la présence en ligne de l'organisation</th
+				>
 				<th class="titles case">Travailler en mode projet</th>
-				<th class="titles case">Mettre à disposition des utilisateurs un service informatique</th>
-				<th class="titles case">Organiser son développement professionnel</th>
+				<th class="titles case"
+					>Mettre à disposition des utilisateurs un service
+					informatique</th
+				>
+				<th class="titles case"
+					>Organiser son développement professionnel</th
+				>
 			</tr>
 			<tr>
-				<th colspan="8" class="subtitle">Réalisations en cours de formation</th>
+				<th colspan="8" class="subtitle"
+					>Réalisations en cours de formation</th
+				>
 			</tr>
 			<tr>
+				<td>Portfolio, Compte Linkedin, Github</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="validation-container">
+					<iconify-icon
+						icon="ci:check-all"
+						class="validation-icon"
+						width="35"
+						height="35"></iconify-icon>
+				</td>
+				<td></td>
+				<td></td>
+				<td class="validation-container">
+					<iconify-icon
+						icon="ci:check-all"
+						class="validation-icon"
+						width="35"
+						height="35"></iconify-icon>
+				</td>
+			</tr>
+			<tr>
+				<td
+					>Installation d'un Windows Server avec Active Directory sur
+					VM</td
+				>
 				<td></td>
 				<td></td>
 				<td></td>
 				<td></td>
 				<td></td>
-				<td></td>
-				<td></td>
+				<td class="validation-container">
+					<iconify-icon
+						icon="tabler:eye-check"
+						class="validation-icon"
+						width="35"
+						height="35"></iconify-icon>
+				</td>
 				<td></td>
 			</tr>
 			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-			<tr>
-				<th colspan="8" class="subtitle">Réalisations en milieu professionnel</th>
+				<th colspan="8" class="subtitle"
+					>Réalisations en milieu professionnel</th
+				>
 			</tr>
 			<tr>
 				<td></td>
@@ -119,9 +134,9 @@ import '../../styles/global.css';
 		justify-content: space-between;
 		flex-wrap: wrap;
 		margin: 2rem 0;
-        box-shadow: 0 20px 32px rgba(0, 0, 0, 0.6);
-        border-radius: 10px;
-        overflow: hidden;
+		box-shadow: 0 20px 32px rgba(0, 0, 0, 0.6);
+		border-radius: 10px;
+		overflow: hidden;
 	}
 
 	section {
@@ -137,72 +152,88 @@ import '../../styles/global.css';
 		border: none;
 	}
 
+	.validation-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0px;
+		border: none;
+	}
+
 	/*wrappers*/
 	th,
 	td {
-		border: 1px solid #54346B;
-        padding: 10px;
-        text-align: left;
+		border: 1px solid #54346b;
+		padding-inline: 0.6rem;
+		text-align: left;
 	}
-	
+
 	th {
 		background-color: #f2f2f2;
 		vertical-align: middle;
 		text-align: center;
-		padding: 10px;
 		font-weight: bold;
-		
 	}
 
-  td{
-    color: #f2f2f2;
-	padding: 10px;
-	text-align: left;
-	background-color: #ECD9FA;
-	color: #131313;
-  }
+	td {
+		color: #f2f2f2;
+		text-align: left;
+		background-color: #ecd9fa;
+		color: #131313;
+		font-size: var(--text-small);
+		font-weight: 500;
+		word-wrap: break-word;
+		word-break: break-word;
+		line-height: 1.2em;
+		padding-inline: 0.4rem;
+	}
 
-  .diagonal-cell {
-        position: relative;
-        width: 25rem;
-        height: auto;
-    }
+	.diagonal-cell {
+		position: relative;
+		width: 25rem;
+		height: auto;
+	}
 
 	.diagonal-cell::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to top right, transparent 49.75%, #54346B 49.9%, #54346B 50.1%, transparent 50.25%);
-        z-index: 1;
-    }
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+			to top right,
+			transparent 49.75%,
+			#54346b 49.9%,
+			#54346b 50.1%,
+			transparent 50.25%
+		);
+		z-index: 1;
+	}
 
-    .diagonal-cell .top-right,
-    .diagonal-cell .bottom-left {
-        position: absolute;
-        width: 50%;
-        height: 50%;
-        z-index: 2;
+	.diagonal-cell .top-right,
+	.diagonal-cell .bottom-left {
+		position: absolute;
+		width: 50%;
+		height: 50%;
+		z-index: 2;
 		display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+		align-items: center;
+		justify-content: center;
+	}
 
-    .diagonal-cell .top-right {
-        top: 0;
-        right: 0;
-    }
+	.diagonal-cell .top-right {
+		top: 0;
+		right: 0;
+	}
 
-    .diagonal-cell .bottom-left {
-        bottom: 0;
-        left: 0;
-    }
+	.diagonal-cell .bottom-left {
+		bottom: 0;
+		left: 0;
+	}
 
 	.periode {
 		width: 12rem;
-
 	}
 
 	.case {
@@ -210,41 +241,43 @@ import '../../styles/global.css';
 	}
 
 	/*utils*/
-	 /* Enlever les bordures extérieures */
-	 table tr:first-child th {
-        border-top: none;
-    }
-    table tr:last-child td {
-        border-bottom: none;
-    }
-    table tr td:first-child,
-    table tr th:first-child {
-        border-left: none;
-    }
-    table tr td:last-child,
-    table tr th:last-child {
-        border-right: none;
-    }
+	/* Enlever les bordures extérieures */
+	table tr:first-child th {
+		border-top: none;
+	}
+	table tr:last-child td {
+		border-bottom: none;
+	}
+	table tr td:first-child,
+	table tr th:first-child {
+		border-left: none;
+	}
+	table tr td:last-child,
+	table tr th:last-child {
+		border-right: none;
+	}
 	.titles {
 		background-color: #131313;
-		color: #E2DDFE;
+		color: #e2ddfe;
 		font-size: 1.3rem;
 	}
 	.subtitle {
-		background-color: #54346B;
-		color: #E2DDFE;
+		background-color: #54346b;
+		color: #e2ddfe;
 		font-size: 1.3rem;
 	}
 
+	.validation-icon {
+		color: var(--primary-60);
+		align-self: center;
+	}
+
 	/* Shadows */
-    th 
-	{
-        box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.2);
-    }
+	th {
+		box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.2);
+	}
 
-    td {
-        box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.1);
-    }
-	
-
+	td {
+		box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.1);
+	}
 </style>
