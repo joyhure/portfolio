@@ -6,7 +6,7 @@ import Header from "../components/header/Header.astro";
 import Footer from "../components/Footer/Footer.astro";
 import Tableau from "../content/bts/Tableau.astro";
 import Realisations from "../content/bts/Realisations.astro";
-import Veille from "../content/bts/Veille.astro";
+import Stages from "../content/bts/Stages.astro";
 
 const { title, slug } = Astro.props;
 ---
@@ -38,8 +38,8 @@ const { title, slug } = Astro.props;
       </div>
       <section class="flex flex-col md:max-w-[80%]  max-w-[100%] min-w-[30rem]  px-5 pt-10 pb-[3rem] justify-center w-[80%">
         {slug === "tableau" && <Tableau {...Astro.props} />}
-        {slug === "realisations" && <Realisations {...Astro.props} />}
-        {slug === "veille" && <Veille {...Astro.props} />}
+        {slug === "stages" && <Stages {...Astro.props} />}
+        {slug === "realisations" && <Realisations {...Astro.props} />}       
         <slot />
       </section>
     </main>

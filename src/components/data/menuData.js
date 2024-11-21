@@ -23,18 +23,18 @@ export const tableauData = {
      position: 1
 };
 
-export const veilleData = {
+export const realisationsData = {
      title: "Autres réalisations",
      description: "Réalisations et TP accomplis durant ma formation",
      heroImage: "/img/realisation.jpg",
      slug: "realisations",
-     position: 2
+     position: 3
 };
 
-export const realisationsData = {
-     title: "Veille Technologique",
-     description: "Moyens mis en oeuvre pour assurer une veille technologique",
-     heroImage: "/img/veille.jpg",
-     slug: "veille",
-     position: 3
+export const stagesData = {
+     title: "Stages",
+     description: "Les stages effectués durant ma formation",
+     heroImage: "/img/stageinfo.jpg",
+     slug: "stages",
+     position: 2
 };

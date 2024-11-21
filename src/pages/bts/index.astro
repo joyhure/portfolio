@@ -2,11 +2,11 @@
 import BTSCards from '../../components/BTSCards.astro';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/header/Header.astro';
-import { menuBTS, tableauData, veilleData, realisationsData } from '../../components/data/menuData';
+import { menuBTS, tableauData, realisationsData, stagesData } from '../../components/data/menuData';
 import Footer from '../../components/Footer/Footer.astro';
 
 // Créer un tableau des pages BTS triées par position
-const btspages = [tableauData, veilleData, realisationsData].sort((a, b) => a.position - b.position);
+const btspages = [tableauData, realisationsData, stagesData].sort((a, b) => a.position - b.position);
 ---
 
 <Layout title="bts">

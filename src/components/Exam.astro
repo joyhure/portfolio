@@ -1,10 +1,10 @@
 ---
 import Title from './atoms/Title.astro';
-import { tableauData, veilleData, realisationsData } from './data/menuData';
+import { tableauData, stagesData, realisationsData } from './data/menuData';
 import BTSCards from './BTSCards.astro';
 
 // Récupérez et triez les pages BTS par position
-const btspages = [tableauData, veilleData, realisationsData].sort(
+const btspages = [tableauData, stagesData, realisationsData].sort(
 	(a, b) => a.position - b.position
 );
 ---
