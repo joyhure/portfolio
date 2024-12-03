@@ -8,7 +8,7 @@
 
 .about__container {
 	display: flex;
-	padding: 28rem 13.1rem;
+	padding: 20rem 13.1rem;
 	justify-content: space-around;
 	gap: 4.4rem;
 }

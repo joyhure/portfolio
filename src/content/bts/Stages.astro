@@ -7,7 +7,7 @@ import '../../styles/global.css';
 		<iframe id="iknae" src="/docs/Stage_Iknae.pdf"></iframe>
 		<div class="text">
 			<h1>1er stage : IKNAE TECHNO</h1>
-			<h2 class="text-xx-large">Compétences mises en oeuvre</h2>
+			<h2 class="text-xx-large">Compétences mises en oeuvre :</h2>
 			<p class="competences">
 			<ul>
 				<li><span>Gérer le patrimoine informatique : </span>Allocation des ressources matérielles de la VM Ubuntu (RAM, CPU, espace disque), sélection des outils de développement nécessaires, installation via des référentiels garantissant l’intégrité des outils, création de snapshots pour restaurer la VM en cas de problème, tests de connectivité réseau pour garantir la communication entre systèmes.</li>
@@ -34,8 +34,8 @@ import '../../styles/global.css';
 
 <style scoped>
 	iframe {
-		width: 810px;
-		height: 1150px;
+		width: 750px;
+		height: 910px;
 		border: none;
 	}
 	.pdf-content {
@@ -43,26 +43,28 @@ import '../../styles/global.css';
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
+		gap: 2rem;
 	}
 	.text {
 		width: 40%;
+		margin-inline: 2rem;
 	}
 	h1{
-		font-size: var(--text-xxx-large);
+		font-size: var(--text-xx-large);
 		color: #D058EA;
 	}
 	h2 {
-		font-size: var(--text-xx-large);
+		font-size: var(--text-x-large);
 		
 		color: #97A5F4;
 	}
 	li{
-		font-size: var(--text-large);
+		font-size: var(--text-medium);
 		margin-bottom: 1.5rem;
 		color: #C2E6FF;
 	}
 	span {
-		font-size: var(--text-x-large);
+		font-size: var(--text-large);
 		color: #70B8FF;
 
 	}

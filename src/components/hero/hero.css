@@ -25,10 +25,12 @@
 }
 
 .hero .hero__img {
-	width: 100%;
+	width: 30rem;
 	max-width: 38rem;
 	border-radius: 50%;
 	height: auto;
+	justify-self: end;
+	align-self: end;
 }
 
 .hero .hero__container {
