@@ -3,7 +3,7 @@ import '../../styles/global.css';
 ---
 
 
-	<div class="pdf-content">
+	<div id="iknae-container" class="pdf-content">
 		<iframe id="iknae" src="/docs/Stage_Iknae.pdf"></iframe>
 		<div class="text">
 			<h1>1er stage : IKNAE TECHNO</h1>
@@ -18,24 +18,54 @@ import '../../styles/global.css';
 		</p>
 		</div>
 	</div>
+	<div id="thanksboss-container" class="pdf-content">
+		<iframe id="thanksboss" src="/docs/Stage_ThanksBoss.pdf"></iframe>
+		<div class="text">
+			<h1>2eme stage : Thanks-boss</h1>
+			<h2 class="text-xx-large">Compétences mises en oeuvre :</h2>
+			<p class="competences">
+			<ul>
+				<li><span>Répondre aux incidents et aux demandes d’assistance et d’évolution : </span>Identification et documentation des anomalies lors des tests en préproduction et production, proposition de correctifs pour résoudre les dysfonctionnements.</li>
+				<li><span>Développer la présence en ligne de l'organisation : </span>Création de pages Web dynamiques, contribution à l’évolution de la plateforme en intégrant de nouvelles fonctionnalités interactives et responsives, ajout de fonctionnalités enrichissant l’expérience utilisateur sur le site Web.</li>
+				<li><span>Travailler en mode projet : </span>Organisation et suivi des tâches sous forme de tickets pour structurer les activités, collaboration sur le développement des pages Web en utilisant une approche itérative et le partage des responsabilités entre coéquipiers, gestion des versions avec Git, évaluation des écarts entre les fonctionnalités attendues et les résultats observés.</li>
+				<li><span>Mettre à disposition des utilisateurs un service informatique : </span>Réalisation de tests en conditions réelles pour valider le bon fonctionnement des fonctionnalités, déploiement de données fictives pour simuler des parcours utilisateurs et valider les comportements attendus, tests des pages développées pour garantir leur compatibilité et leur stabilité.</li>
+				<li><span>Organiser son développement professionnel : </span>Mise en œuvre d’outils de gestion de version (Git) et de coordination des tâches, amélioration des compétences en développement Web et des pratiques de gestion en mode collaboratif, renforcement de la capacité à organiser et documenter le travail dans un environnement professionnel.</li>
+			</ul>
+		</p>
+		</div>
+	</div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const hash = window.location.hash;
-    if (hash.startsWith('#pdf-page-')) {
-      const page = hash.split('-')[2];
-      const iframe = document.getElementById('iknae') as HTMLIFrameElement;
-      if (iframe && page) {
-        iframe.src = `/docs/Stage_Iknae.pdf#page=${page}`;
-      }
-    }
-  });
-</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+		  const hash = window.location.hash;
+		  if (hash.startsWith('#iknae-page-')) {
+			const page = hash.split('-')[2];
+			const iframe = document.getElementById('iknae') as HTMLIFrameElement;
+			if (iframe && page) {
+			  iframe.src = `/docs/Stage_Iknae.pdf#page=${page}`;
+			  const iknaeContainer = document.getElementById('iknae-container');
+			  if (iknaeContainer) {
+				iknaeContainer.scrollIntoView({ behavior: 'smooth' });
+			  }
+			}
+		  } else if (hash.startsWith('#thanksboss-page-')) {
+			const page = hash.split('-')[2];
+			const iframe = document.getElementById('thanksboss') as HTMLIFrameElement;
+			if (iframe && page) {
+			  iframe.src = `/docs/Stage_ThanksBoss.pdf#page=${page}`;
+			  const thanksbossContainer = document.getElementById('thanksboss-container');
+			  if (thanksbossContainer) {
+				thanksbossContainer.scrollIntoView({ behavior: 'smooth' });
+			  }
+			}
+		  }
+		});
+	  </script>
 
 <style scoped>
 	iframe {
 		width: 750px;
-		height: 910px;
+		height: 1040px;
 		border: none;
 	}
 	.pdf-content {
@@ -44,10 +74,12 @@ import '../../styles/global.css';
 		flex-direction: row;
 		justify-content: space-between;
 		gap: 2rem;
+		padding: 2rem 2rem;
 	}
 	.text {
 		width: 40%;
 		margin-inline: 2rem;
+		padding-top: 8rem;
 	}
 	h1{
 		font-size: var(--text-xx-large);
