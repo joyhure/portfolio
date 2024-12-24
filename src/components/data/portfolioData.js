@@ -17,63 +17,59 @@
  */
 export const portafolioData = [
 	{
-		imgSrc: 'https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2021/06/copy-of-the-6-best-restaurant-website-templates-1.png',
-		title: 'Restaurant',
-		skills: ['React', 'StyledComponents'],
+		imgSrc: "/img/optiweb.png",
+		title: 'Optitop : L\'application web',
+		skills: ['HTML', 'CSS', 'Bootstrap', 'mySQL', 'Laravel', 'JavaScript'],
 		description:
-			'Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.',
-		demoURL: '',
-		repoURL: '',
+			'Une plateforme web conçue pour automatiser la gestion des statistiques commerciales d’un magasin d’optique. En cours de réalisation...',
+		/*demoURL: '',
+		repoURL: '',*/
 		anim: 'fade-right',
 	},
 	{
-		imgSrc: 'https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/299377097/original/7eb7dcebe244fcf5ad75d92b0969fc116946bd57/create-professional-amd-responsive-wordpress-website.jpg',
-		title: 'E-commerce',
-		skills: ['JavaScript', 'Bootstrap'],
+		imgSrc: "/img/optilourde.png",
+		title: 'Optitop : L\'application lourde',
+		skills: ['Python', 'Qt', 'mySQL', 'Laravel'],
 		description:
-			' Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.',
-		demoURL: '',
-		repoURL: '',
+			' Une application bureautique dédiée aux managers. Elle permet l’importation des données commerciales via des fichiers CSV. En cours de réalisation...',
+		/*demoURL: '',
+		repoURL: '',*/
 		anim: 'fade-up',
 		averageBrightness: 0.1,
 	},
 	{
-		imgSrc: 'https://i0.wp.com/themes.svn.wordpress.org/cafe-cafeteria/1.5.3/screenshot.png',
-		title: 'Coffe Store',
-		skills: ['React', 'CSS'],
+		imgSrc: "/img/optiphone.png",
+		title: 'Optitop : L\'application mobile',
+		skills: ['Flutter', 'Dart', 'mySQL', 'Laravel'],
 		description:
-			'Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.',
-		demoURL: '',
-		repoURL: '',
+			'Une solution mobile optimisée pour la consultation des indicateurs de performance et la gestion des comptes utilisateur. En cours de réalisation...',
+		/*demoURL: '',
+		repoURL: '',*/
 		anim: 'fade-left',
 	},
-	{
-		imgSrc: 'https://www.corse.mx/cdn/shop/files/tienda_lenceria-lenceria-hot_sale-ofertas-mexico-lenceria_seyx-encaje-corse_mx-corse_lenceria_1200_x_560_px_13.png?v=1712270274&width=1500',
-		title: 'Coffe Store',
-		skills: ['React', 'CSS'],
-		description:
-			'Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.Laboris ex laboris mollit esse fugiat aute cillum nostrud enim dolor sit. Reprehenderit et non nulla irure aute nostrud commodo aute.',
-		demoURL: '',
-		repoURL: '',
-		anim: 'fade-left',
-	},
-
-	
 ];
 
 const skillIcons = {
 	JavaScript: 'skill-icons:javascript',
-	React: 'skill-icons:react-dark',
-	Astro: 'skill-icons:astro',
-	CSS: 'skill-icons:css',
-	Sass: 'skill-icons:sass',
-	StyledComponents: 'skill-icons:styledcomponents',
-	Bootstrap: 'skill-icons:bootstrap',
-	Tailwind: 'skill-icons:tailwindcss-dark',
+    React: 'skill-icons:react-dark',
+    Astro: 'skill-icons:astro',
+    CSS: 'skill-icons:css',
+    Sass: 'skill-icons:sass',
+    StyledComponents: 'skill-icons:styledcomponents',
+    Bootstrap: 'skill-icons:bootstrap',
+    Tailwind: 'skill-icons:tailwindcss-dark',
+    HTML: 'skill-icons:html',
+    PHP: 'skill-icons:php-dark',
+    mySQL: 'skill-icons:mysql-dark',
+	Laravel: 'skill-icons:laravel-dark',
+	Python: 'skill-icons:python-dark',
+	Qt: 'skill-icons:qt-dark',
+	Flutter: 'skill-icons:flutter-dark',
+	Dart: 'skill-icons:dart-dark',
 };
 
 /**
- * @description Se mapea el portafolioData pour ajouter les icônes des compétences
+ * @description Pour ajouter les icônes des compétences
  * Vous pouvez consulter Array.map sur https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
  */
 export const getPortafolioData = portafolioData.map((item) => {
