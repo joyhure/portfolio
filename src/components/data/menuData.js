@@ -1,3 +1,5 @@
+const base = import.meta.env.BASE_URL;
+
 export const mainMenu = [
      { link: "#", content: "Accueil"/*, icon:"lucide:home"*/ },
      { link: "#about", content: "A Propos"/*, icon:"octicon:person-24"*/ },
@@ -18,7 +20,7 @@ export const menuBTS = [
 export const tableauData = {
      title: "Tableau de synthèse du BTS",
      description: "Tableau de synthèse interactif",
-     heroImage: "/img/competence.jpg",
+     heroImage: `${base}img/competence.jpg`,
      slug: "tableau",
      position: 1
 };
@@ -26,7 +28,7 @@ export const tableauData = {
 export const realisationsData = {
      title: "Autres réalisations",
      description: "Réalisations et TP accomplis durant ma formation",
-     heroImage: "/img/realisation.jpg",
+     heroImage: `${base}img/realisation.jpg`,
      slug: "realisations",
      position: 3
 };
@@ -34,7 +36,7 @@ export const realisationsData = {
 export const stagesData = {
      title: "Stages",
      description: "Les stages effectués durant ma formation",
-     heroImage: "/img/stageinfo.jpg",
+     heroImage: `${base}img/stageinfo.jpg`,
      slug: "stages",
      position: 2
 };

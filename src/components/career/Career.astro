@@ -2,7 +2,9 @@
 import Title from '../atoms/Title.astro';
 import Timeline from './components/timeline.tsx';
 import './career.css';
-import TimelineApp from '../career/TimelineApp.tsx'; 
+import TimelineApp from '../career/TimelineApp.tsx';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <section id="career" class="career">
@@ -14,7 +16,7 @@ import TimelineApp from '../career/TimelineApp.tsx';
 		</div>
 		<img
 			class="about__img"
-			src="/img/parcours.gif"
+			src={`${base}img/parcours.gif`}
 			alt="Image à propos Joy Huré"
 		/>
 	</div>

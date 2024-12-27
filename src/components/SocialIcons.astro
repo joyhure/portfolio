@@ -1,4 +1,6 @@
 ---
+const base = import.meta.env.BASE_URL;
+
 const {width, height} = Astro.props;
 const socialLinks = [
 	{
@@ -10,8 +12,8 @@ const socialLinks = [
 
 	{
 		title: 'CV',
-		icon: 'ph:read-cv-logo-bold',
-		href: '../docs/cv_joy.pdf',
+		icon: 'pepicons-pop:cv',
+		href: `${base}docs/cv_joy.pdf`,
 
 	},
 ];

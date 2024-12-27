@@ -6,6 +6,8 @@ interface Props {
 const { title } = Astro.props;
 import Header from '../components/header/Header.astro';
 import { mainMenu } from '../components/data/menuData.js';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -14,7 +16,7 @@ import { mainMenu } from '../components/data/menuData.js';
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="img/favicon.png" type="image/png">
+		<link rel="icon" href={`${base}img/favicon.png`} type="image/png">
 		<meta name="generator" content={Astro.generator} />
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />

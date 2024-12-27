@@ -1,11 +1,13 @@
 ---
 const {name} = Astro.props;
+
+const base = import.meta.env.BASE_URL;
 ---
 <div class="profile">
     <div class="img__container">
         <img
             class="header__img"
-            src="/img/img_joy.png"
+            src={`${base}img/img_joy.png`}
             alt="Logo img"
             width="40px"
             height="40px"
@@ -31,7 +33,5 @@ const {name} = Astro.props;
 	border-radius: 50%;
 	align-items: center;
 	gap: 1.5rem;
-    width: 25%;
-    height: 25%;
 }
 </style>

@@ -39,6 +39,7 @@
   "author": "Joy Huré",
   "license": "MIT",
   "devDependencies": {
+    "@types/react-vertical-timeline-component": "^3.3.6",
     "astro": "^5.1.1",
     "gh-pages": "^6.2.0"
   }
