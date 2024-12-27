@@ -1,40 +1,37 @@
-### start using this template by running:
- `npm create astro@latest -- --template SofiDevO/portfolio-sofidev-garrux`
-# Portfolio Template with Astro
+# Modèle de Portfolio avec Astro
 
-Welcome to the Portfolio Template built with Astro! This responsive template allows you to showcase all your projects with an amazing UI. Below you'll find instructions on how to use this template, including how to add new portfolio items, main dependencies, and examples of usage.
+Bienvenue dans ce portfolio construit avec Astro ! Vous trouverez ci-dessous des explications sur ce modèle.
 
-![Portada](image-1.png)
-## Table of Contents
+## Table des Matières
 
-1. [Usage](#usage)
-2. [Portfolio Data Format](#portfolio-data-format)
-3. [Adding Icons with Iconify](#adding-icons-with-iconify)
-4. [Technologies Used](#technologies-used)
-5. [Figma Design](#figma-design)
-6. [Author and License](#author-and-license)
-7. [Bugs and Issues](#bugs-and-issues)
-8. [Homepage](#homepage)
+1. [Utilisation](#utilisation)
+2. [Format des Données du Portfolio](#format-des-données-du-portfolio)
+3. [Ajout d'icônes avec Iconify](#ajout-dicônes-avec-iconify)
+4. [Technologies Utilisées](#technologies-utilisées)
+5. [Design Figma](#design-figma)
+6. [Auteur et Licence](#auteur-et-licence)
+7. [Bugs et Problèmes](#bugs-et-problèmes)
+8. [Page d'Accueil](#page-daccueil)
 
-## Usage
+## Utilisation
 
-To add new elements to your portfolio, you need to add them in `/src/data/portfolioData.js`.
+Pour ajouter de nouveaux éléments à votre portfolio, vous devez les ajouter dans `/src/data/portfolioData.js`.
 
-## Portfolio Data Format
+## Format des Données du Portfolio
 
-The data for your portfolio should follow this format:
+Les données de votre portfolio doivent suivre ce format :
 
 ```js
 /**
  * @typedef PortfolioData
- * @property {string} imgSrc - URL of the image
- * @property {string} title - Title of the card
- * @property {string[]} skills - Array of your skills, e.g., ['React', 'CSS', 'JavaScript']
- * @property {string} description - Description of the card
- * @property {string} demoURL - URL of a demo page
- * @property {string} repoURL - URL of the repository, e.g., https://github.com/user/repo
- * @property {string} anim - Animation that will play when the card loads, e.g., fade-up, fade-right, fade-left, fade-down
- * @property {number} averageBrightness - Brightness level of the card's background color, e.g., 0.1
+ * @property {string} imgSrc - URL de l'image
+ * @property {string} title - Titre de la carte
+ * @property {string[]} skills - Tableau de vos compétences, par exemple ['React', 'CSS', 'JavaScript']
+ * @property {string} description - Description de la carte
+ * @property {string} demoURL - URL d'une page de démonstration
+ * @property {string} repoURL - URL du dépôt, par exemple https://github.com/user/repo
+ * @property {string} anim - Animation qui se jouera lorsque la carte se charge, par exemple fade-up, fade-right, fade-left, fade-down
+ * @property {number} averageBrightness - Niveau de luminosité de la couleur de fond de la carte, par exemple 0.1
  */
 
 /**
@@ -49,6 +46,7 @@ export const portfolioData = [
         demoURL: '',
         repoURL: '',
         anim: 'fade-right',
+        averageBrightness: 0.1,
     },
     {
         imgSrc: 'https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/299377097/original/7eb7dcebe244fcf5ad75d92b0969fc116946bd57/create-professional-amd-responsive-wordpress-website.jpg',
@@ -60,7 +58,7 @@ export const portfolioData = [
         anim: 'fade-up',
         averageBrightness: 0.1,
     },
-    // Add more portfolio items here
+    // Ajoutez plus d'éléments de portfolio ici
 ];
 
 const skillIcons = {
@@ -75,7 +73,7 @@ const skillIcons = {
 };
 
 /**
- * @description Maps portfolioData to include skill icons
+ * @description Mappe portfolioData pour inclure les icônes de compétences
  */
 export const getPortfolioData = portfolioData.map((item) => ({
     ...item,
@@ -83,21 +81,21 @@ export const getPortfolioData = portfolioData.map((item) => ({
 }));
 ```
 
-This data is then passed to the portfolio component as props.
+Ces données sont ensuite passées au composant portfolio en tant que props.
 
-## Adding Icons with Iconify
+## Ajout d'Icônes avec Iconify
 
-We use Iconify for icons. To add new icons, use the `icon` attribute.
+Nous utilisons Iconify pour les icônes. Pour ajouter de nouvelles icônes, utilisez l'attribut `icon`.
 
-### Example
+### Exemple
 
-To use a React icon:
+Pour utiliser une icône React :
 
 ```html
 <iconify-icon icon="logos:react" width="27" height="27"></iconify-icon>
 ```
 
-In `data.js`, specify the icon identifier like this:
+Dans `data.js`, spécifiez l'identifiant de l'icône comme ceci :
 
 ```js
 {
@@ -107,9 +105,9 @@ In `data.js`, specify the icon identifier like this:
 }
 ```
 
-### Adding the Iconify Script
+### Ajout du Script Iconify
 
-Add the Iconify script to the `<head>` section of your project:
+Ajoutez le script Iconify à la section `<head>` de votre projet :
 
 ```html
 <head>
@@ -117,35 +115,32 @@ Add the Iconify script to the `<head>` section of your project:
 </head>
 ```
 
-Once this script is included, you can use any Iconify icon by specifying its identifier.
+Une fois ce script inclus, vous pouvez utiliser n'importe quelle icône Iconify en spécifiant son identifiant.
 
-## Technologies Used
+## Technologies Utilisées
 
-This template leverages several modern technologies to create a highly responsive and visually appealing portfolio:
+Ce modèle utilise plusieurs technologies modernes pour créer un portfolio très réactif et visuellement attrayant :
 
-- **Astro**: A modern static site builder that allows you to use your favorite frameworks such as React, Vue, and Svelte. It optimizes for performance by shipping less JavaScript.
-- **React**: A JavaScript library for building user interfaces, which allows for the creation of reusable components.
-- **Tailwind CSS**: A utility-first CSS framework that enables you to design directly in your markup, providing flexibility and control over your styling.
-- **Styled Components**: A library for React and React Native that allows you to use component-level styles in your application. It utilizes tagged template literals to style components.
-- **Iconify**: A comprehensive library for icons that provides access to thousands of icons from different collections, all accessible via a single syntax.
+- **Astro** : Un générateur de sites statiques moderne qui vous permet d'utiliser vos frameworks préférés tels que React, Vue et Svelte. Il optimise les performances en expédiant moins de JavaScript.
+- **React** : Une bibliothèque JavaScript pour construire des interfaces utilisateur, qui permet la création de composants réutilisables.
+- **Tailwind CSS** : Un framework CSS utilitaire-first qui vous permet de concevoir directement dans votre balisage, offrant flexibilité et contrôle sur votre style.
+- **Styled Components** : Une bibliothèque pour React et React Native qui vous permet d'utiliser des styles au niveau des composants dans votre application. Elle utilise des littéraux de modèle étiquetés pour styliser les composants.
+- **Iconify** : Une bibliothèque complète pour les icônes qui donne accès à des milliers d'icônes de différentes collections, toutes accessibles via une syntaxe unique.
 
-## Figma Design
+## Design Figma
 
-You can view and edit the design of this template on Figma. Here is the [Figma design link](https://www.figma.com/design/15EteAKw8d0QCNCucw5lft/mi-primer-blog?node-id=200-643&t=hbUqn1hqSfLcfI92-0).
+Vous pouvez voir et éditer le design de ce modèle sur Figma. Voici le [lien du design Figma](https://www.figma.com/design/15EteAKw8d0QCNCucw5lft/mi-primer-blog?node-id=200-643&t=hbUqn1hqSfLcfI92-0).
 
-## Author and License
+## Auteur et Licence
 
-- **Author**: SofiDev / Garrux
-- **License**: MIT
+- **Auteur** : Joy Huré
+- **Licence** : MIT
 
-## Bugs and Issues
+### Basé sur le travail de :
 
-If you encounter any bugs or have issues, please report them [here](https://github.com/SofiDevO/portfolio-astrosofidev-garrux/issues).
+Ce projet est basé sur le modèle de portfolio créé par SofiDev / Garrux. Vous pouvez trouver l'original [ici](https://github.com/SofiDevO/portfolio-sofidev-garrux).
 
-## Homepage
-
-For more information and detailed documentation, visit the [homepage](https://github.com/SofiDevO/portfolio-astrosofidev-garrux#readme).
 
 ---
 
-Enjoy building your portfolio! If you have any questions or run into any issues, feel free to reach out.
+Amusez-vous à construire votre portfolio !
