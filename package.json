@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "npm run build && npx gh-pages -d dist"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
@@ -24,29 +25,21 @@
     "tailwindcss": "^3.4.12",
     "typescript": "^5.5.4"
   },
-  "description": "![Portada](image-1.png)",
+  "description": "Portfolio de Joy Huré",
   "main": "index.astro",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SofiDevO/portfolio-astrosofidev-garrux.git"
-  },
   "keywords": [
     "astro",
-    "sofidev",
     "frontend",
     "portfolio",
     "javascript",
-    "portafolio",
     "css",
-    "tailwind"
+    "tailwind",
+    "joy huré"
   ],
-  "author": "SofiDev / Garrux",
+  "author": "Joy Huré",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/SofiDevO/portfolio-astrosofidev-garrux/issues"
-  },
-  "homepage": "https://github.com/SofiDevO/portfolio-astrosofidev-garrux#readme",
   "devDependencies": {
-    "astro": "^5.1.1"
+    "astro": "^5.1.1",
+    "gh-pages": "^6.2.0"
   }
 }
