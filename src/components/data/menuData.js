@@ -1,21 +1,21 @@
 const base = import.meta.env.BASE_URL;
 
 export const mainMenu = [
-     { link: "#", content: "Accueil"/*, icon:"lucide:home"*/ },
-     { link: "#about", content: "A Propos"/*, icon:"octicon:person-24"*/ },
+     { link: "#", content: "Accueil"},
+     { link: "#about", content: "A Propos"},
      { link: "#career", content: "Parcours" },
      { link: "#skills", content: "Compétences" },
-     { link: "#projects", content: "Projets"/*, icon:"carbon:portfolio"*/ },
-     { link: "#exam", content: "BTS SIO"/*, icon:"mdi:blog"*/ }
+     { link: "#projects", content: "Projets"},
+     { link: "#exam", content: "BTS SIO"}
 ]
 export const menuBTS = [
-     { link: "/", content: "Accueil"/*, icon:"lucide:home"*/ },
-     { link: "/#about", content: "A Propos"/*, icon:"octicon:person-24"*/ },
-     { link: "/#career", content: "Parcours" },
-     { link: "/#skills", content: "Compétences" },
-     { link: "/#projects", content: "Projets"/*, icon:"carbon:portfolio"*/ },
-     { link: "/#exam", content: "BTS SIO"/*, icon:"mdi:blog"*/ }
-]
+     { link: `${base}`, content: "Accueil"},
+     { link: `${base}#about`, content: "A Propos"},
+     { link: `${base}#career`, content: "Parcours" },
+     { link: `${base}#skills`, content: "Compétences" },
+     { link: `${base}#projects`, content: "Projets"},
+     { link: `${base}#exam`, content: "BTS SIO"}
+];
 
 export const tableauData = {
      title: "Tableau de synthèse du BTS",
