@@ -1,5 +1,4 @@
 /**
- * @SofiDev Ceci est JSDOC, si vous pensez que cela peut être compliqué, supprimez-le simplement, c'est un commentaire, cela n'affectera rien
  * @param {HTMLImageElement} img une image du DOM, sa couleur moyenne sera obtenue
  * @param {number} brightness Quelle luminosité doit avoir la couleur résultante
  * @param {()=>void} onerror

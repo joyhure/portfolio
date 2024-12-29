@@ -2,6 +2,8 @@
 import TerminalIcon from '../../atoms/terminal-icon/TerminalIcon.astro';
 import Terminal from '../terminal/Terminal.astro';
 import './tools-on-terminal.css';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <Terminal nombre="joyH">
@@ -9,24 +11,32 @@ import './tools-on-terminal.css';
 		<h2>Outils & Logiciels</h2>
 		<div class="terminal__tools__container">
 			<TerminalIcon
-				src="/assets/vscode.svg"
+				src={`${base}assets/vscode.svg`}
 				color="#0090FF"
 				name="VS Code"
 			/>
 			<TerminalIcon
-				src="/assets/github.svg"
+				src={`${base}assets/github.svg`}
 				color="#E8E8E8"
 				name="Github"
 			/>
 			<TerminalIcon
-				src="/assets/windows.svg"
+				src={`${base}assets/windows.svg`}
 				color="#0090FF"
 				name="Windows"
 			/>
-			<TerminalIcon src="/assets/ubuntu.svg" color="#F76B15" name="Ubuntu" />
-			<TerminalIcon src="/assets/chatgpt.svg" color="#FBFEFD" name="ChatGPT" />
 			<TerminalIcon
-				src="/assets/notion.svg"
+				src={`${base}assets/ubuntu.svg`}
+				color="#F76B15"
+				name="Ubuntu"
+			/>
+			<TerminalIcon
+				src={`${base}assets/chatgpt.svg`}
+				color="#FBFEFD"
+				name="ChatGPT"
+			/>
+			<TerminalIcon
+				src={`${base}assets/notion.svg`}
 				color="#FCFCFC"
 				name="Notion"
 			/>

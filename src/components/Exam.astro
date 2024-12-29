@@ -7,6 +7,8 @@ import BTSCards from './BTSCards.astro';
 const btspages = [tableauData, stagesData, realisationsData].sort(
 	(a, b) => a.position - b.position
 );
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <section
@@ -24,13 +26,13 @@ const btspages = [tableauData, stagesData, realisationsData].sort(
 							title={btspage.title}
 							content={btspage.description}
 							img={btspage.heroImage}
-							href={`/bts/${btspage.slug}/`}
+							href={`${base}bts/${btspage.slug}/`}
 						></BTSCards>
 					))
 			}
 		</div>
 			<a
-				href="../../docs/tableau_synthese.pdf"
+				href={`${base}docs/tableau_synthese.pdf`}
 				target="_blank"
 				rel="noopener noreferrer"
 				class="table-link"

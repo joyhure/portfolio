@@ -3,14 +3,14 @@ import SocialIcons from '../SocialIcons.astro';
 import Title from '../atoms/Title.astro';
 import "./about.css"
 
-
+const base = import.meta.env.BASE_URL;
 ---
 
 <section id="about" class="about">
 	<div class="about__container">
 		<img
 			class="about__img"
-			src="/img/hello_joy.gif"
+			src={`${base}img/hello_joy.gif`}
 			alt="Image à propos Joy Huré"
 		/>
 
