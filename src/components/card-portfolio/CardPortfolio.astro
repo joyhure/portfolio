@@ -1,5 +1,9 @@
 ---
 import './card-portfolio.css';
+interface Skill {
+	icon: string;
+}
+
 const {
 	title,
 	description,
@@ -8,7 +12,15 @@ const {
 	repoURL,
 	demoURL,
 	averageBrightness,
-} = Astro.props;
+} = Astro.props as {
+	title: string;
+	description: string;
+	imgSrc: string;
+	skills: Skill[];
+	repoURL: string;
+	demoURL: string;
+	averageBrightness: number;
+};
 ---
 
 <div class="card__portfolio">
