@@ -6,7 +6,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://joyhure.github.io/portfolio',
-  base: '/portfolio/public/',
+  base: '/portfolio/',
   devToolbar: {
     enabled: false
   },
