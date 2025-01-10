@@ -40,11 +40,12 @@ const base = import.meta.env.BASE_URL;
 	<script>
 		document.addEventListener('DOMContentLoaded', function () {
 		  const hash = window.location.hash;
+		  const base = `${import.meta.env.BASE_URL || '/'}`;
 		  if (hash.startsWith('#iknae-page-')) {
 			const page = hash.split('-')[2];
 			const iframe = document.getElementById('iknae') as HTMLIFrameElement;
 			if (iframe && page) {
-			  iframe.src = `/docs/Stage_Iknae.pdf#page=${page}`;
+			  iframe.src = `${base}docs/Stage_Iknae.pdf#page=${page}`;
 			  const iknaeContainer = document.getElementById('iknae-container');
 			  if (iknaeContainer) {
 				iknaeContainer.scrollIntoView({ behavior: 'smooth' });
@@ -54,7 +55,7 @@ const base = import.meta.env.BASE_URL;
 			const page = hash.split('-')[2];
 			const iframe = document.getElementById('thanksboss') as HTMLIFrameElement;
 			if (iframe && page) {
-			  iframe.src = `/docs/Stage_ThanksBoss.pdf#page=${page}`;
+			  iframe.src = `${base}docs/Stage_ThanksBoss.pdf#page=${page}`;
 			  const thanksbossContainer = document.getElementById('thanksboss-container');
 			  if (thanksbossContainer) {
 				thanksbossContainer.scrollIntoView({ behavior: 'smooth' });
