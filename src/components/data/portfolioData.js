@@ -1,5 +1,4 @@
 /**
- * @SofiDev C'est JSDOC, si tu penses que cela peut être compliqué, supprime-le simplement, c'est un commentaire, cela n'affectera rien d'autre
  * @typedef PortafolioData
  * @property {string} imgSrc URL de l'image
  * @property {string} title Titre de la carte
@@ -12,12 +11,13 @@
  */
 
 /**
- * @SofiDev C'est JSDOC, si tu penses que cela peut être compliqué, supprime-le simplement, c'est un commentaire, cela n'affectera rien d'autre
  * @type {PortafolioData[]}
  */
+const base = import.meta.env.BASE_URL;
+
 export const portafolioData = [
 	{
-		imgSrc: "/img/optiweb.png",
+		imgSrc: `${base}img/optiweb.png`,
 		title: 'Optitop : L\'application web',
 		skills: ['HTML', 'CSS', 'Bootstrap', 'mySQL', 'Laravel', 'JavaScript'],
 		description:
@@ -27,7 +27,7 @@ export const portafolioData = [
 		anim: 'fade-right',
 	},
 	{
-		imgSrc: "/img/optilourde.png",
+		imgSrc: `${base}img/optilourde.png`,
 		title: 'Optitop : L\'application lourde',
 		skills: ['Python', 'Qt', 'mySQL', 'Laravel'],
 		description:
@@ -38,7 +38,7 @@ export const portafolioData = [
 		averageBrightness: 0.1,
 	},
 	{
-		imgSrc: "/img/optiphone.png",
+		imgSrc: `${base}img/optiphone.png`,
 		title: 'Optitop : L\'application mobile',
 		skills: ['Flutter', 'Dart', 'mySQL', 'Laravel'],
 		description:

@@ -1,24 +1,26 @@
+const base = import.meta.env.BASE_URL;
+
 export const mainMenu = [
-     { link: "#", content: "Accueil"/*, icon:"lucide:home"*/ },
-     { link: "#about", content: "A Propos"/*, icon:"octicon:person-24"*/ },
+     { link: "#", content: "Accueil"},
+     { link: "#about", content: "A Propos"},
      { link: "#career", content: "Parcours" },
      { link: "#skills", content: "Compétences" },
-     { link: "#projects", content: "Projets"/*, icon:"carbon:portfolio"*/ },
-     { link: "#exam", content: "BTS SIO"/*, icon:"mdi:blog"*/ }
+     { link: "#projects", content: "Projets"},
+     { link: "#exam", content: "BTS SIO"}
 ]
 export const menuBTS = [
-     { link: "/", content: "Accueil"/*, icon:"lucide:home"*/ },
-     { link: "/#about", content: "A Propos"/*, icon:"octicon:person-24"*/ },
-     { link: "/#career", content: "Parcours" },
-     { link: "/#skills", content: "Compétences" },
-     { link: "/#projects", content: "Projets"/*, icon:"carbon:portfolio"*/ },
-     { link: "/#exam", content: "BTS SIO"/*, icon:"mdi:blog"*/ }
-]
+     { link: `${base}`, content: "Accueil"},
+     { link: `${base}#about`, content: "A Propos"},
+     { link: `${base}#career`, content: "Parcours" },
+     { link: `${base}#skills`, content: "Compétences" },
+     { link: `${base}#projects`, content: "Projets"},
+     { link: `${base}#exam`, content: "BTS SIO"}
+];
 
 export const tableauData = {
      title: "Tableau de synthèse du BTS",
      description: "Tableau de synthèse interactif",
-     heroImage: "/img/competence.jpg",
+     heroImage: `${base}img/competence.jpg`,
      slug: "tableau",
      position: 1
 };
@@ -26,7 +28,7 @@ export const tableauData = {
 export const realisationsData = {
      title: "Autres réalisations",
      description: "Réalisations et TP accomplis durant ma formation",
-     heroImage: "/img/realisation.jpg",
+     heroImage: `${base}img/realisation.jpg`,
      slug: "realisations",
      position: 3
 };
@@ -34,7 +36,7 @@ export const realisationsData = {
 export const stagesData = {
      title: "Stages",
      description: "Les stages effectués durant ma formation",
-     heroImage: "/img/stageinfo.jpg",
+     heroImage: `${base}img/stageinfo.jpg`,
      slug: "stages",
      position: 2
 };

@@ -1,5 +1,14 @@
 ---
 import './card-portfolio.css';
+interface CardPortfolioProps {
+    title: string;
+    description: string;
+    imgSrc: string;
+    skills: string[];
+    repoURL: string;
+    demoURL: string;
+    averageBrightness: number;
+}
 const {
 	title,
 	description,
@@ -8,7 +17,7 @@ const {
 	repoURL,
 	demoURL,
 	averageBrightness,
-} = Astro.props;
+} = Astro.props as CardPortfolioProps;
 ---
 
 <div class="card__portfolio">
@@ -29,7 +38,7 @@ const {
 
 			<div class="skills">
 				{
-					skills.map((skill) => (
+					skills.map((skill: string) => (
 						<iconify-icon class="iconify" icon={skill} />
 					))
 				}

@@ -1,5 +1,7 @@
 ---
 import './hero.css';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <section class="hero">
@@ -13,7 +15,7 @@ import './hero.css';
 		</div>
     <img
 		class="hero__img"
-		src="/img/img_joy2.png"
+		src={`${base}img/img_joy2.png`}
 		alt="Joy Huré"
 	/>
 	</div>
