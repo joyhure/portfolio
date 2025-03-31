@@ -103,3 +103,21 @@ p{
 body {
 	cursor: default;
 }
+
+/*Titles*/
+h1{
+	font-size: var(--text-xx-large);
+	color: #D058EA;
+}
+
+h2 {
+	font-size: var(--text-x-large);
+	
+	color: #97A5F4;
+}
+
+h3 {
+	font-size: var(--text-large);
+	color: #70B8FF;
+
+}

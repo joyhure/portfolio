@@ -12,10 +12,10 @@ const base = import.meta.env.BASE_URL;
 			<h2 class="text-xx-large">Compétences mises en oeuvre :</h2>
 			<p class="competences">
 			<ul>
-				<li><span>Gérer le patrimoine informatique : </span>Allocation des ressources matérielles de la VM Ubuntu (RAM, CPU, espace disque), sélection des outils de développement nécessaires, installation via des référentiels garantissant l’intégrité des outils, création de snapshots pour restaurer la VM en cas de problème, tests de connectivité réseau pour garantir la communication entre systèmes.</li>
-				<li><span>Répondre aux incidents et aux demandes d’assistance et d’évolution : </span>Résolution des problèmes d’affichage sur la VM Ubuntu, vérification des installations et tests de PostgreSQL (création de base, gestion des utilisateurs).</li>
-				<li><span>Mettre à disposition des utilisateurs un service informatique : </span>Tests du réseau sur la VM Ubuntu, tests des outils PostgreSQL et pgAdmin, installation complète de la VM Ubuntu, mise à jour et configuration des outils nécessaires, installation et configuration des outils de développement, documentation des étapes d’installation et des commandes.</li>
-				<li><span>Organiser son développement professionnel : </span>Création d’un environnement isolé sur VM Ubuntu pour expérimenter et apprendre, configuration de VSCode avec des extensions spécifiques, choix d’outils adaptés au projet, recherche de solutions techniques pour résoudre les problèmes rencontrés, amélioration des compétences pratiques sur des technologies couramment utilisées dans ce secteur.</li>
+				<li><h3>Gérer le patrimoine informatique : </h3>Allocation des ressources matérielles de la VM Ubuntu (RAM, CPU, espace disque), sélection des outils de développement nécessaires, installation via des référentiels garantissant l’intégrité des outils, création de snapshots pour restaurer la VM en cas de problème, tests de connectivité réseau pour garantir la communication entre systèmes.</li>
+				<li><h3>Répondre aux incidents et aux demandes d’assistance et d’évolution : </h3>Résolution des problèmes d’affichage sur la VM Ubuntu, vérification des installations et tests de PostgreSQL (création de base, gestion des utilisateurs).</li>
+				<li><h3>Mettre à disposition des utilisateurs un service informatique : </h3>Tests du réseau sur la VM Ubuntu, tests des outils PostgreSQL et pgAdmin, installation complète de la VM Ubuntu, mise à jour et configuration des outils nécessaires, installation et configuration des outils de développement, documentation des étapes d’installation et des commandes.</li>
+				<li><h3>Organiser son développement professionnel : </h3>Création d’un environnement isolé sur VM Ubuntu pour expérimenter et apprendre, configuration de VSCode avec des extensions spécifiques, choix d’outils adaptés au projet, recherche de solutions techniques pour résoudre les problèmes rencontrés, amélioration des compétences pratiques sur des technologies couramment utilisées dans ce secteur.</li>
 			</ul>
 		</p>
 		</div>
@@ -27,11 +27,11 @@ const base = import.meta.env.BASE_URL;
 			<h2 class="text-xx-large">Compétences mises en oeuvre :</h2>
 			<p class="competences">
 			<ul>
-				<li><span>Répondre aux incidents et aux demandes d’assistance et d’évolution : </span>Identification et documentation des anomalies lors des tests en préproduction et production, proposition de correctifs pour résoudre les dysfonctionnements.</li>
-				<li><span>Développer la présence en ligne de l'organisation : </span>Création de pages Web dynamiques, contribution à l’évolution de la plateforme en intégrant de nouvelles fonctionnalités interactives et responsives, ajout de fonctionnalités enrichissant l’expérience utilisateur sur le site Web.</li>
-				<li><span>Travailler en mode projet : </span>Organisation et suivi des tâches sous forme de tickets pour structurer les activités, collaboration sur le développement des pages Web en utilisant une approche itérative et le partage des responsabilités entre coéquipiers, gestion des versions avec Git, évaluation des écarts entre les fonctionnalités attendues et les résultats observés.</li>
-				<li><span>Mettre à disposition des utilisateurs un service informatique : </span>Réalisation de tests en conditions réelles pour valider le bon fonctionnement des fonctionnalités, déploiement de données fictives pour simuler des parcours utilisateurs et valider les comportements attendus, tests des pages développées pour garantir leur compatibilité et leur stabilité.</li>
-				<li><span>Organiser son développement professionnel : </span>Mise en œuvre d’outils de gestion de version (Git) et de coordination des tâches, amélioration des compétences en développement Web et des pratiques de gestion en mode collaboratif, renforcement de la capacité à organiser et documenter le travail dans un environnement professionnel.</li>
+				<li><h3>Répondre aux incidents et aux demandes d’assistance et d’évolution : </h3>Identification et documentation des anomalies lors des tests en préproduction et production, proposition de correctifs pour résoudre les dysfonctionnements.</li>
+				<li><h3>Développer la présence en ligne de l'organisation : </h3>Création de pages Web dynamiques, contribution à l’évolution de la plateforme en intégrant de nouvelles fonctionnalités interactives et responsives, ajout de fonctionnalités enrichissant l’expérience utilisateur sur le site Web.</li>
+				<li><h3>Travailler en mode projet : </h3>Organisation et suivi des tâches sous forme de tickets pour structurer les activités, collaboration sur le développement des pages Web en utilisant une approche itérative et le partage des responsabilités entre coéquipiers, gestion des versions avec Git, évaluation des écarts entre les fonctionnalités attendues et les résultats observés.</li>
+				<li><h3>Mettre à disposition des utilisateurs un service informatique : </h3>Réalisation de tests en conditions réelles pour valider le bon fonctionnement des fonctionnalités, déploiement de données fictives pour simuler des parcours utilisateurs et valider les comportements attendus, tests des pages développées pour garantir leur compatibilité et leur stabilité.</li>
+				<li><h3>Organiser son développement professionnel : </h3>Mise en œuvre d’outils de gestion de version (Git) et de coordination des tâches, amélioration des compétences en développement Web et des pratiques de gestion en mode collaboratif, renforcement de la capacité à organiser et documenter le travail dans un environnement professionnel.</li>
 			</ul>
 		</p>
 		</div>
@@ -84,25 +84,13 @@ const base = import.meta.env.BASE_URL;
 		margin-inline: 2rem;
 		padding-top: 8rem;
 	}
-	h1{
-		font-size: var(--text-xx-large);
-		color: #D058EA;
-	}
-	h2 {
-		font-size: var(--text-x-large);
-		
-		color: #97A5F4;
-	}
+
 	li{
 		font-size: var(--text-medium);
 		margin-bottom: 1.5rem;
 		color: #C2E6FF;
 	}
-	span {
-		font-size: var(--text-large);
-		color: #70B8FF;
 
-	}
 	.text-center {
 		display: none;
 	}
