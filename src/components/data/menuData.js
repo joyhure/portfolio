@@ -26,8 +26,8 @@ export const tableauData = {
 };
 
 export const realisationsData = {
-     title: "Autres réalisations",
-     description: "Réalisations et TP accomplis durant ma formation",
+     title: "Compétences de l'épreuve E4",
+     description: "Les compétences requises pour l'épreuve E4 acquises durant ma formation",
      heroImage: `${base}img/realisation.jpg`,
      slug: "realisations",
      position: 3
