@@ -1,87 +1,243 @@
 ---
 import '../../styles/global.css';
+import type { Contents } from '../../types/sections';
 
-const base = import.meta.env.BASE_URL;
+const contents: Contents = {
+	titre1: {
+		title: 'Gérer le patrimoine informatique',
+		content: 'Contenu de la section 1...',
+	},
+	titre2: {
+		title: "Répondre aux incidents et aux demandes d'assistance et d'évolution",
+		content: 'Contenu de la section 2...',
+	},
+	titre3: {
+		title: "Développer la présence en ligne de l'organisation",
+		content: 'Contenu de la section 3...',
+	},
+	titre4: {
+		title: 'Travailler en mode projet',
+		content: 'Contenu de la section 4...',
+	},
+	titre5: {
+		title: 'Mettre à disposition des utilisateurs un service informatique',
+		content: 'Contenu de la section 5...',
+	},
+	titre6: {
+		title: 'Organiser son développement professionnel',
+		content: 'Contenu de la section 6...',
+	},
+};
+
+// Définir les points de troncature pour chaque titre (uniquement ceux qui doivent être tronqués)
+const truncatePoints = {
+    titre2: 'demandes',
+    titre3: 'ligne',
+    titre5: 'utilisateurs',
+};
+
+// Fonction pour tronquer le texte après un mot spécifique
+function truncateAfterWord(text: string, word?: string) {
+    if (!word) return text; // Retourne le texte complet si pas de point de troncature
+    const index = text.indexOf(word) + word.length;
+    return text.substring(0, index) + '...';
+}
+
+const introText = `
+    <div class="intro-text">
+        <p>Cette page présente les compétences professionnelles évaluées dans le cadre de l'épreuve E5 « Support et mise à disposition de services informatiques ».</p>
+        <p>Elles couvrent l'ensemble des activités du cycle de vie d'un service informatique, de la conception à la mise à disposition, en passant par le support, la gestion de projet et la veille technologique.</p>
+        <p>Chaque compétence est illustrée par des réalisations concrètes, issues de mes stages, de mon activité professionnelle ou de travaux encadrés réalisés durant ma formation.</p>
+    </div>
+`;
 ---
 
-<nav class="menu-vertical">
-    <div class="menu-container">
-        <ul class="menu-list">
-            <li><a href="#titre1">Gérer le patrimoine informatique</a></li>
-            <li><a href="#titre2">Répondre aux incidents et aux demandes d'assistance et d'évolution</a></li>
-            <li><a href="#titre3">Développer la présence en ligne de l'organisation</a></li>
-            <li><a href="#titre4">Travailler en mode projet</a></li>
-            <li><a href="#titre5">Mettre à disposition des utilisateurs un service informatique</a></li>
-            <li><a href="#titre6">Organiser son développement professionnel</a></li>
-        </ul>
-    </div>
-</nav>
+<div class="realisations-container">
+	<nav class="menu-vertical">
+		<div class="menu-container">
+			<ul class="menu-list">
+				{
+					Object.entries(contents).map(([id, { title }]) => (
+						<li>
+							<a
+								href={`#${id}`}
+								class="menu-link"
+								data-section={id}
+								title={title}
+							>
+								{truncateAfterWord(title, truncatePoints[id as keyof typeof truncatePoints])}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</nav>
+
+	<div id="content-display" class="content-container">
+		 <!-- Affichage du texte d'intro par défaut -->
+        <Fragment set:html={introText} />
+	</div>
+</div>
+
+<script define:vars={{ contents, introText }}>
+	const contentDisplay = document.querySelector('#content-display');
+
+	if (!contentDisplay) {
+		console.error("L'élément content-display n'a pas été trouvé");
+		return;
+	}
+
+	// Maintenant contentDisplay est sûr à utiliser
+	document.querySelectorAll('.menu-link').forEach((link) => {
+		link.addEventListener('click', (e) => {
+			e.preventDefault();
+
+			// Vérification de type runtime
+			if (!(e.currentTarget instanceof HTMLAnchorElement)) {
+				return;
+			}
+
+			const sectionId = e.currentTarget.dataset.section;
+
+			// Retire la classe active de tous les liens
+			const activeLinks = document.querySelectorAll('.menu-link.active');
+            activeLinks.forEach((l) => l.classList.remove('active'));
+
+            // Si on reclique sur le même lien, on affiche le texte d'intro
+            if (activeLinks.length === 1 && activeLinks[0] === e.currentTarget) {
+                contentDisplay.innerHTML = introText;
+                return;
+            }
+
+			// Ajoute la classe active au lien cliqué
+			e.currentTarget.classList.add('active');
+
+			// Affiche le contenu correspondant
+			if (sectionId && contents[sectionId]) {
+				contentDisplay.innerHTML = `
+                    <h2>${contents[sectionId].title}</h2>
+                    <div>${contents[sectionId].content}</div>
+                `;
+			}
+		});
+	});
+</script>
 
 <style scoped>
-    .menu-vertical {
-    position: fixed;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 2rem;
-    z-index: 2;
-}
+	.menu-vertical {
+		padding: 2rem;
+		width: 30%;
+	}
 
-.menu-container {
-    background: #00000033;
-    backdrop-filter: blur(20px);
-    padding: 1rem;
-    border-radius: 14px;
-    border: 0.03px solid #7c39fd47;
-}
+	.menu-container {
+		background: #00000033;
+		backdrop-filter: blur(20px);
+		padding: 1rem;
+		border-radius: 14px;
+		border: 0.03px solid #7c39fd47;
+	}
 
-.menu-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
+	.realisations-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 2rem;
+	}
 
-.menu-list li a {
-    position: relative;
-    color: var(--on-primary);
-    font-size: var(--text-general);
-    cursor: pointer;
-}
+	.menu-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
 
-.menu-list li a::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: '';
-    width: 100%;
-    transform: scaleX(0);
-    transform-origin: 0;
-    height: 2px;
-    background: var(--primary);
-    transition: 0.35s transform;
-}
+	.menu-list li a {
+		position: relative;
+		color: var(--on-primary);
+		font-size: var(--text-general);
+		cursor: pointer;
+		display: inline-block; /* Changé de block à inline-block */
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
 
-.menu-list li a:hover {
-    color: var(--primary-90);
-}
+	.menu-list li a::after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		content: '';
+		width: 100%;
+		transform: scaleX(0);
+		transform-origin: 0;
+		height: 2px;
+		background: var(--primary);
+		transition: 0.35s transform;
+	}
 
-.menu-list li a:hover::after {
-    transform: scale(1);
-}
+	/* Style pour le lien actif - modification importante */
+	.menu-list li a.active {
+		color: var(--primary);
+	}
 
-@media screen and (max-width: 768px) {
-    .menu-vertical {
-        bottom: 2rem;
-        top: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
+	.menu-list li a.active::after {
+		transform: scaleX(1);
+		/* Ajout pour s'assurer que le soulignement reste */
+		transform-origin: left;
+	}
+
+	/* Retirer le hover si le lien est déjà actif */
+	.menu-list li a.active:hover::after {
+		transform: scaleX(1);
+	}
+
+	.menu-list li a:hover {
+		color: var(--primary-90);
+	}
+
+	.menu-list li a:hover::after {
+		transform: scaleX(1);
+	}
+
+	.content-container {
+		padding: 2rem;
+	}
+
+	.menu-link.active {
+		color: var(--primary);
+	}
+
+	.menu-link.active::after {
+		transform: scaleX(1);
+	}
+
+	@media screen and (max-width: 768px) {
+		.menu-vertical {
+			bottom: 2rem;
+			top: auto;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 90%;
+		}
+
+		.menu-list {
+			flex-direction: row;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		.content-container {
+			margin-left: 0;
+			margin-bottom: 150px; /* Espace pour le menu en bas */
+		}
+	}
+
+	.intro-text {
+        line-height: 1.6;
     }
-
-    .menu-list {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
+    
+    .intro-text p {
+        margin-bottom: 1rem;
     }
-}
 </style>
