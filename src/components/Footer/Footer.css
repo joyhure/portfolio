@@ -5,9 +5,9 @@ footer {
     justify-content: space-between;
     color: var(--primary-100);
     align-items: center;
-    padding: 2rem 4rem;
+    padding: 1rem 4rem;
     flex-wrap: wrap;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
 .footer__container {

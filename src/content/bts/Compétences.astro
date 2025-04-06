@@ -55,6 +55,7 @@ const introText = `
 ---
 
 <div class="competences-container">
+	<div id="left-part">
 	<nav class="menu-vertical">
 		<div class="menu-container">
 			<ul class="menu-list">
@@ -75,11 +76,24 @@ const introText = `
 			</ul>
 		</div>
 	</nav>
+	<a
+				href={`${base}docs/tableau_synthese.pdf`}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="table-link"
+				><iconify-icon
+					icon="mdi:file-pdf-box"
+					class="icon-link"
+					width="45"
+					height="45"></iconify-icon><span class="content">Tableau de Synthèse</span></a
+			>
+</div>
 
 	<div id="content-display" class="content-container">
 		 <!-- Affichage du texte d'intro par défaut -->
         <Fragment set:html={introText} />
 	</div>
+	
 </div>
 
 <script define:vars={{ contents, introText }}>
@@ -127,6 +141,13 @@ const introText = `
 </script>
 
 <style scoped>
+#left-part {
+	display: flex;
+	flex-direction: column;
+	justify-content:start;
+	gap: 3rem;
+	}
+
 	.menu-vertical {
 		width: auto;
 	}
@@ -212,6 +233,20 @@ const introText = `
 
 	.menu-link.active::after {
 		transform: scaleX(1);
+	}
+
+	.table-link {
+		display: flex;
+		flex-direction: row;
+		font-size: 1.3rem;
+		color: #bee7f5;
+		vertical-align: center;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.table-link:hover {
+		color: #4CCCE6;
 	}
 
 	@media screen and (max-width: 768px) {

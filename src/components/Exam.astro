@@ -13,14 +13,14 @@ const base = import.meta.env.BASE_URL;
 
 <section
 	id="exam"
-	class="flex flex-col items-center w-full h-full md:max-w-full justify-center flex-wrap px-4"
+	class="flex flex-col items-center w-full h-full md:max-w-full justify-center flex-wrap"
 >
 	<div class="exam__container">
-		<Title margin="2rem" contenu="BTS SIO SLAM" />
+		<Title margin="1rem" contenu="BTS SIO SLAM" />
 		<div class="btscards__container">
 			{
 				btspages
-					.slice(0, 3)
+					.slice(0, 4)
 					.map((btspage) => (
 						<BTSCards
 							title={btspage.title}
@@ -31,17 +31,6 @@ const base = import.meta.env.BASE_URL;
 					))
 			}
 		</div>
-			<a
-				href={`${base}docs/tableau_synthese.pdf`}
-				target="_blank"
-				rel="noopener noreferrer"
-				class="table-link"
-				><iconify-icon
-					icon="mdi:file-pdf-box"
-					class="icon-link"
-					width="35"
-					height="35"></iconify-icon><h2 class="content">Tableau de Synthèse</h2></a
-			>
 	</div>
 </section>
 
@@ -52,10 +41,7 @@ const base = import.meta.env.BASE_URL;
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
-		margin: 5rem auto;
-	}
-	section {
-		margin-bottom: 8rem;
+
 	}
 
 	.btscards__container {
