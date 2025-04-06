@@ -5,9 +5,11 @@ import "../styles/global.css"
 import Header from "../components/header/Header.astro";
 import Footer from "../components/Footer/Footer.astro";
 import Tableau from "../content/bts/Tableau.astro";
-import Realisations from "../content/bts/Realisations.astro";
+import Competences from "../content/bts/Compétences.astro";
 import Stages from "../content/bts/Stages.astro";
+import Realisations from "../content/bts/Realisations.astro";
 import Title from "../components/atoms/Title.astro";
+import Comptences from "../content/bts/Compétences.astro";
 
 const { title, slug } = Astro.props;
 const base = import.meta.env.BASE_URL;
@@ -43,6 +45,7 @@ const base = import.meta.env.BASE_URL;
       <section class="flex flex-col md:max-w-[100%]  max-w-[100%] min-w-[30rem]  px-20 justify-center w-[80%">
         {slug === "tableau" && <Tableau {...Astro.props} />}
         {slug === "stages" && <Stages {...Astro.props} />}
+        {slug === "competences" && <Competences {...Astro.props} />}
         {slug === "realisations" && <Realisations {...Astro.props} />}       
         <slot />
       </section>

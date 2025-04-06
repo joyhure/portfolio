@@ -25,11 +25,11 @@ export const tableauData = {
      position: 1
 };
 
-export const realisationsData = {
+export const competencesData = {
      title: "Compétences de l'épreuve E5",
      description: "Les compétences requises pour l'épreuve E5 acquises durant ma formation",
      heroImage: `${base}img/realisation.jpg`,
-     slug: "realisations",
+     slug: "competences",
      position: 3
 };
 
@@ -39,4 +39,12 @@ export const stagesData = {
      heroImage: `${base}img/stageinfo.jpg`,
      slug: "stages",
      position: 2
+};
+
+export const realisationsData = {
+     title: "Autres réalisations",
+     description: "Diverses réalisations et tâches effectuées durant ma formation ou dans mon activité professionnelle",
+     heroImage: `${base}img/realisation.jpg`,
+     slug: "realisations",
+     position: 4
 };

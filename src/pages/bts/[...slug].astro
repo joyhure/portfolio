@@ -1,10 +1,10 @@
 ---
-import { tableauData, stagesData, realisationsData } from '../../components/data/menuData';
+import { tableauData, stagesData, competencesData, realisationsData } from '../../components/data/menuData';
 import BTSLayout from '../../layouts/BTSLayout.astro';
 import "../../styles/global.css"
 
 export async function getStaticPaths() {
-	const btspages = [tableauData, stagesData, realisationsData];
+	const btspages = [tableauData, stagesData, competencesData, realisationsData];
 	return btspages.map((btspage) => ({
 		params: { slug: btspage.slug },
 		props: btspage,
