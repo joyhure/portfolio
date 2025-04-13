@@ -7,7 +7,26 @@ const base = import.meta.env.BASE_URL;
 const contents: Contents = {
 	titre1: {
 		title: `Gérer le patrimoine informatique`,
-		content: `<h3>Recenser et identifier les ressources numériques</h3>`,
+		content: `
+            <h3 class="subtitles">Recenser et identifier les ressources numériques</h3>
+			<div class="competence-content">
+            	<div class="content-flex">
+                	<iconify-icon
+                    	icon="line-md:chevron-small-double-right"
+                    	class="icon-arrow"
+                    	style="color: #B182EF;"
+                    	width="20"
+                    	height="20">
+                	</iconify-icon>
+                	<p class="p-content">
+                    	Durant mon stage chez IKNAE Techno, j'ai été chargée de créer un environnement de développement complet pour pouvoir monter en compétences sur la gestion de bases de données avec PostgreSQL.
+                    	Dans ce cadre, j'ai procédé au recensement des ressources matérielles et logicielles disponibles afin de configurer une machine virtuelle Ubuntu adaptée aux besoins de développement.
+                	</p>
+				</div>
+				<a class="pdf-link" href="/portfolio/bts/stages/">
+					<img class="pdf-icon" src="/portfolio/img/Rapport_Iknae.png" alt="PDF Icon Iknae">
+				</a>
+            </div>`,
 	},
 	titre2: {
 		title: "Répondre aux incidents et aux demandes d'assistance et d'évolution",
@@ -33,16 +52,16 @@ const contents: Contents = {
 
 // Définir les points de troncature pour chaque titre (uniquement ceux qui doivent être tronqués)
 const truncatePoints = {
-    titre2: 'demandes',
-    titre3: 'ligne',
-    titre5: 'utilisateurs',
+	titre2: 'demandes',
+	titre3: 'ligne',
+	titre5: 'utilisateurs',
 };
 
 // Fonction pour tronquer le texte après un mot spécifique
 function truncateAfterWord(text: string, word?: string) {
-    if (!word) return text; // Retourne le texte complet si pas de point de troncature
-    const index = text.indexOf(word) + word.length;
-    return text.substring(0, index) + '...';
+	if (!word) return text; // Retourne le texte complet si pas de point de troncature
+	const index = text.indexOf(word) + word.length;
+	return text.substring(0, index) + '...';
 }
 
 const introText = `
@@ -56,44 +75,50 @@ const introText = `
 
 <div class="competences-container">
 	<div id="left-part">
-	<nav class="menu-vertical">
-		<div class="menu-container">
-			<ul class="menu-list">
-				{
-					Object.entries(contents).map(([id, { title }]) => (
-						<li>
-							<a
-								href={`#${id}`}
-								class="menu-link"
-								data-section={id}
-								title={title}
-							>
-								{truncateAfterWord(title, truncatePoints[id as keyof typeof truncatePoints])}
-							</a>
-						</li>
-					))
-				}
-			</ul>
-		</div>
-	</nav>
-	<a
-				href={`${base}docs/tableau_synthese.pdf`}
-				target="_blank"
-				rel="noopener noreferrer"
-				class="table-link"
-				><iconify-icon
-					icon="mdi:file-pdf-box"
-					class="icon-link"
-					width="45"
-					height="45"></iconify-icon><span class="content">Tableau de Synthèse</span></a
-			>
-</div>
+		<nav class="menu-vertical">
+			<div class="menu-container">
+				<ul class="menu-list">
+					{
+						Object.entries(contents).map(([id, { title }]) => (
+							<li>
+								<a
+									href={`#${id}`}
+									class="menu-link"
+									data-section={id}
+									title={title}
+								>
+									{truncateAfterWord(
+										title,
+										truncatePoints[
+											id as keyof typeof truncatePoints
+										]
+									)}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</nav>
+		<a
+			href={`${base}docs/tableau_synthese.pdf`}
+			target="_blank"
+			rel="noopener noreferrer"
+			class="table-link"
+			><iconify-icon
+				icon="mdi:file-pdf-box"
+				class="icon-link"
+				width="45"
+				height="45"></iconify-icon><span class="content"
+				>Tableau de Synthèse</span
+			></a
+		>
+	</div>
 
 	<div id="content-display" class="content-container">
-		 <!-- Affichage du texte d'intro par défaut -->
-        <Fragment set:html={introText} />
+		<!-- Affichage du texte d'intro par défaut -->
+		<Fragment set:html={introText} />
 	</div>
-	
 </div>
 
 <script define:vars={{ contents, introText }}>
@@ -118,13 +143,16 @@ const introText = `
 
 			// Retire la classe active de tous les liens
 			const activeLinks = document.querySelectorAll('.menu-link.active');
-            activeLinks.forEach((l) => l.classList.remove('active'));
+			activeLinks.forEach((l) => l.classList.remove('active'));
 
-            // Si on reclique sur le même lien, on affiche le texte d'intro
-            if (activeLinks.length === 1 && activeLinks[0] === e.currentTarget) {
-                contentDisplay.innerHTML = introText;
-                return;
-            }
+			// Si on reclique sur le même lien, on affiche le texte d'intro
+			if (
+				activeLinks.length === 1 &&
+				activeLinks[0] === e.currentTarget
+			) {
+				contentDisplay.innerHTML = introText;
+				return;
+			}
 
 			// Ajoute la classe active au lien cliqué
 			e.currentTarget.classList.add('active');
@@ -141,12 +169,12 @@ const introText = `
 </script>
 
 <style scoped>
-#left-part {
-	display: flex;
-	flex-direction: column;
-	justify-content:start;
-	gap: 3rem;
-	padding-block: 3rem;
+	#left-part {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		gap: 3rem;
+		padding-block: 3rem;
 	}
 
 	.menu-vertical {
@@ -200,6 +228,11 @@ const introText = `
 		transition: 0.35s transform;
 	}
 
+	:global(.intro-text) {
+		line-height: 1.6;
+		width: 69%;
+	}
+
 	/* Style pour le lien actif */
 	.menu-list li a.active {
 		color: var(--primary);
@@ -225,7 +258,6 @@ const introText = `
 
 	.content-container {
 		padding: 2rem;
-		width: 60%;
 	}
 
 	.menu-link.active {
@@ -247,7 +279,58 @@ const introText = `
 	}
 
 	.table-link:hover {
-		color: #4CCCE6;
+		color: #4ccce6;
+	}
+
+	.content-flex {
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+		align-items: flex-start;
+	}
+
+	:global(.content-flex) {
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+		align-items: flex-start;
+		justify-content: flex-start;
+		width: 69%;
+	}
+
+	:global(.subtitles) {
+		margin-block: 1rem;
+	}
+
+	:global(.pdf-link) {
+		align-self: center;
+		width: 96px;
+		height: 120px;
+		margin-inline: 7rem;
+		border: 2px solid transparent; 
+		transition: border-color 0.3s ease; 
+		padding: 0.5rem;
+		border-radius: 8px;
+	}
+
+	:global(.pdf-link:hover) {
+		border-color: #D94CE8;
+	}
+
+	:global(.competence-content) {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	:global(.pdf-icon) {
+		width: auto;
+		align-self: center;
+	}
+
+	:global(.pdf-link:hover) {
+			color: #D94CE8;
 	}
 
 	@media screen and (max-width: 768px) {
@@ -267,15 +350,7 @@ const introText = `
 
 		.content-container {
 			margin-left: 0;
-			margin-bottom: 150px; /* Espace pour le menu en bas */
+			margin-bottom: 150px;
 		}
 	}
-
-	.intro-text {
-        line-height: 1.6;
-    }
-    
-    .intro-text p {
-        margin-bottom: 1rem;
-    }
 </style>
