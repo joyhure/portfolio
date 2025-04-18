@@ -8,8 +8,18 @@ const contents: Contents = {
 	titre1: {
 		title: `Gérer le patrimoine informatique`,
 		content: `
-            <h3 class="subtitles">Recenser et identifier les ressources numériques</h3>
-			<div class="competence-content">
+    <div class="section-container">
+        <h3 class="subtitles collapsible">
+            <span class="h3-content">Recenser et identifier les ressources numériques</span>
+            <iconify-icon
+                icon="gridicons:dropdown"
+                class="collapse-icon"
+                width="24"
+                height="24">
+            </iconify-icon>
+        </h3>
+        <div class="collapsible-content">
+            <div class="competence-content">
             	<div class="content-flex">
                 	<iconify-icon
                     	icon="line-md:chevron-small-double-right"
@@ -20,13 +30,63 @@ const contents: Contents = {
                 	</iconify-icon>
                 	<p class="p-content">
                     	Durant mon stage chez IKNAE Techno, j'ai été chargée de créer un environnement de développement complet pour pouvoir monter en compétences sur la gestion de bases de données avec PostgreSQL.
-                    	Dans ce cadre, j'ai procédé au recensement des ressources matérielles et logicielles disponibles afin de configurer une machine virtuelle Ubuntu adaptée aux besoins de développement.
+                    	Dans ce contexte, j'ai procédé au recensement des ressources matérielles et logicielles disponibles afin de configurer une machine virtuelle Ubuntu adaptée aux besoins de développement.
                 	</p>
 				</div>
 				<a class="pdf-link" href="/portfolio/bts/stages/#iknae-page-6">
 					<img class="pdf-icon" src="/portfolio/img/Rapport_Iknae.png" alt="PDF Icon Iknae">
 				</a>
-            </div>`,
+            </div>
+			<div class="competence-content">
+            	<div class="content-flex">
+                	<iconify-icon
+                    	icon="line-md:chevron-small-double-right"
+                    	class="icon-arrow"
+                    	style="color: #B182EF;"
+                    	width="20"
+                    	height="20">
+                	</iconify-icon>
+                	<p class="p-content">
+                    	Dans le cadre de la réouverture du magasin Afflelou après travaux, j’ai mené un recensement complet du parc informatique. Ce travail a permis d’identifier et de documenter l’ensemble des postes, périphériques et logiciels utilisés, afin d’optimiser le suivi technique et la gestion du matériel en magasin à l'avenir.
+						Ayant aussi réalisé ce même inventaire avant les travaux, j'ai pu objectivement constater les changements et les améliorations apportées au matériel informatique. 
+                	</p>
+				</div>
+				<a class="pdf-link" href="/portfolio/bts/realisations/#aa-page-4">
+					<img class="pdf-icon" src="/portfolio/img/AP_AA.png" alt="PDF Icon Afflelou">
+				</a>
+            </div>
+        </div>
+    </div>
+	<div class="section-container">
+        <h3 class="subtitles collapsible">
+            <span class="h3-content">Exploiter des référentiels, normes et standards adoptés par le prestataire informatique</span>
+            <iconify-icon
+                icon="gridicons:dropdown"
+                class="collapse-icon"
+                width="24"
+                height="24">
+            </iconify-icon>
+        </h3>
+        <div class="collapsible-content">
+			<div class="competence-content">
+            	<div class="content-flex">
+                	<iconify-icon
+                    	icon="line-md:chevron-small-double-right"
+                    	class="icon-arrow"
+                    	style="color: #B182EF;"
+                    	width="20"
+                    	height="20">
+                	</iconify-icon>
+                	<p class="p-content">
+                    	Toujours chez IKNAE Techno, j’ai installé une machine virtuelle Ubuntu et utilisé les gestionnaires de paquets APT et Snap pour déployer des outils standards comme PostgreSQL, pgAdmin, Git, PHP et VSCode. Ce travail m’a permis de m’appuyer sur des référentiels reconnus et de respecter les pratiques en vigueur dans le secteur professionnel.
+                	</p>
+				</div>
+				<a class="pdf-link" href="/portfolio/bts/stages/#iknae-page-16">
+					<img class="pdf-icon" src="/portfolio/img/Rapport_Iknae.png" alt="PDF Icon Iknae">
+				</a>
+            </div>
+		</div>
+	</div>`,
 	},
 	titre2: {
 		title: "Répondre aux incidents et aux demandes d'assistance et d'évolution",
@@ -166,6 +226,36 @@ const introText = `
 			}
 		});
 	});
+
+    document.addEventListener('DOMContentLoaded', function() {
+        function setupCollapsibles() {
+            document.querySelectorAll('.collapsible').forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('collapsed');
+                });
+            });
+        }
+
+        // Configuration initiale
+        setupCollapsibles();
+
+        // Pour le contenu dynamique
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.addedNodes.length) {
+                    setupCollapsibles();
+                }
+            });
+        });
+
+        // Observer le conteneur de contenu pour les changements
+        const contentDisplay = document.getElementById('content-display');
+        if (contentDisplay) {
+            observer.observe(contentDisplay, { childList: true, subtree: true });
+        }
+    });
 </script>
 
 <style scoped>
@@ -303,6 +393,9 @@ const introText = `
 	}
 
 	:global(.pdf-link) {
+		display: flex;          /* Ajout */
+		align-items: center;    /* Centrage vertical */
+		justify-content: center; /* Centrage horizontal */
 		align-self: center;
 		width: 96px;
 		height: 120px;
@@ -322,11 +415,13 @@ const introText = `
 		flex-direction: row;
 		justify-content: space-between;
 		gap: 1rem;
+		padding-bottom: 2rem;
 	}
 
 	:global(.pdf-icon) {
-		width: auto;
-		align-self: center;
+		width: 100%;           /* Pour que l'image s'adapte au conteneur */
+		height: auto;          /* Maintient le ratio */
+		object-fit: contain;   /* Assure que l'image est entièrement visible */
 	}
 
 	:global(.pdf-link:hover) {
@@ -352,5 +447,36 @@ const introText = `
 			margin-left: 0;
 			margin-bottom: 150px;
 		}
+	}
+
+	:global(.section-container) {
+		margin-bottom: 2rem;
+	}
+
+	:global(.collapsible) {
+		display: flex;
+		justify-content:flex-start;
+		align-items: center;
+		cursor: pointer;
+		user-select: none;
+	}
+
+	:global(.collapse-icon) {
+		transition: transform 0.3s ease;
+		color: #6DDDFB;
+	}
+
+	:global(.collapsible.active .collapse-icon) {
+		transform: rotate(180deg);
+	}
+
+	:global(.collapsible-content) {
+		max-height: 1000px;
+		overflow: hidden;
+		transition: max-height 0.3s ease-in-out;
+	}
+
+	:global(.collapsible-content.collapsed) {
+		max-height: 0;
 	}
 </style>
