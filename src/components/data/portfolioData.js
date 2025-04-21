@@ -19,13 +19,13 @@ export const portafolioData = [
 	{
 		imgSrc: `${base}img/optiweb.png`,
 		title: 'Optitop : L\'application web',
-		skills: ['HTML', 'CSS', 'Bootstrap', 'mySQL', 'Laravel', 'JavaScript'],
+		skills: ['Bootstrap', 'JavaScript', 'PHP', 'Java', 'Springboot', 'mySQL'],
 		description:
 			'Une plateforme web conçue pour automatiser la gestion des statistiques commerciales d’un magasin d’optique. En cours de réalisation...',
-		/*demoURL: '',
-		repoURL: '',*/
+		/*demoURL: '',*/
+		repoURL: 'https://github.com/joyhure/Optitop',
 		anim: 'fade-right',
-	},
+	},/*
 	{
 		imgSrc: `${base}img/optilourde.png`,
 		title: 'Optitop : L\'application lourde',
@@ -33,7 +33,7 @@ export const portafolioData = [
 		description:
 			' Une application bureautique dédiée aux managers. Elle permet l’importation des données commerciales via des fichiers CSV. En cours de réalisation...',
 		/*demoURL: '',
-		repoURL: '',*/
+		repoURL: '',
 		anim: 'fade-up',
 		averageBrightness: 0.1,
 	},
@@ -44,9 +44,9 @@ export const portafolioData = [
 		description:
 			'Une solution mobile optimisée pour la consultation des indicateurs de performance et la gestion des comptes utilisateur. En cours de réalisation...',
 		/*demoURL: '',
-		repoURL: '',*/
+		repoURL: '',
 		anim: 'fade-left',
-	},
+	},*/
 ];
 
 const skillIcons = {
@@ -66,6 +66,8 @@ const skillIcons = {
 	Qt: 'skill-icons:qt-dark',
 	Flutter: 'skill-icons:flutter-dark',
 	Dart: 'skill-icons:dart-dark',
+	Java: 'skill-icons:java-dark',
+	Springboot: 'skill-icons:spring-dark'
 };
 
 /**

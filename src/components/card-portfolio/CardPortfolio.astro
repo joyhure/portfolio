@@ -18,6 +18,8 @@ const {
 	demoURL,
 	averageBrightness,
 } = Astro.props as CardPortfolioProps;
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <div class="card__portfolio">
@@ -45,6 +47,12 @@ const {
 			</div>
 
 			<div class="buttons">
+				<a href={`${base}projects/optitop/`}>
+					<span>
+						Doc
+						{(<iconify-icon icon="quill:link-out" />)}
+					</span>
+				</a>
 				<a href={repoURL}>
 					<span>
 						Github
