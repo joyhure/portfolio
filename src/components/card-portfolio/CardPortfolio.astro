@@ -1,23 +1,17 @@
 ---
 import './card-portfolio.css';
-interface CardPortfolioProps {
-    title: string;
-    description: string;
-    imgSrc: string;
-    skills: string[];
-    repoURL: string;
-    demoURL: string;
-    averageBrightness: number;
-}
+import type { PortafolioData } from '../data/portfolioData';
+
 const {
-	title,
-	description,
-	imgSrc,
-	skills,
-	repoURL,
-	demoURL,
-	averageBrightness,
-} = Astro.props as CardPortfolioProps;
+    title,
+    description,
+    imgSrc,
+    skills,
+    repoURL,
+    demoURL,
+    averageBrightness,
+    slug,
+} = Astro.props as PortafolioData;
 
 const base = import.meta.env.BASE_URL;
 ---
@@ -47,7 +41,7 @@ const base = import.meta.env.BASE_URL;
 			</div>
 
 			<div class="buttons">
-				<a href={`${base}projects/optitop/`}>
+				<a href={`${base}projects/${slug}/`}>
 					<span>
 						Doc
 						{(<iconify-icon icon="quill:link-out" />)}

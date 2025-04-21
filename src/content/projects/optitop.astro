@@ -1,0 +1,51 @@
+---
+import '../../styles/global.css';
+
+const base = import.meta.env.BASE_URL;
+---
+<div id="optitop-container" class="pdf-content">
+    <iframe id="optitop" src={`${base}docs/Rapport_AA.pdf`}></iframe>
+    <div class="text">
+        <h1>Activités Professionnelles : Alain Afflelou</h1>
+        <h2 class="text-xx-large">Compétences mises en oeuvre :</h2>
+        <p class="competences">
+        <ul>
+            <li><h3>Gérer le patrimoine informatique : </h3>Recensement du parc informatique.</li>
+        </ul>
+    </div>
+</div>
+
+<style>
+.project-img {
+    width: 750px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pdf-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 2rem;
+}
+
+.text {
+    width: 40%;
+    margin-inline: 2rem;
+    padding-top: 4rem;
+}
+
+li {
+    font-size: var(--text-medium);
+    margin-bottom: 1.5rem;
+    color: #C2E6FF;
+}
+
+.description {
+    margin-top: 2rem;
+    line-height: 1.6;
+}
+</style>

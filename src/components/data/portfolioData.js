@@ -5,7 +5,8 @@
  * @property {string[]} skills Tableau de tes compétences, par exemple : ['React', 'CSS', 'JavaScript']
  * @property {string} description La description de la carte
  * @property {string} demoURL URL d'une démonstration
- * @property {string} repoURL URL du dépôt, par exemple : https://github.com/utilisateur/repo
+ * @property {string} repoURL URL du dépôt
+ * @property {string} slug Identifiant unique du projet pour le routing, par exemple : 'optitop'
  * @property {string} anim L'animation qui sera exécutée lors du chargement de la carte, par exemple : fade-up, fade-right, fade-left, fade-down
  * @property {number} averageBrightness La luminosité moyenne de la couleur de fond de la carte, par exemple : 0.1
  */
@@ -23,8 +24,9 @@ export const portafolioData = [
 		description:
 			'Une plateforme web conçue pour automatiser la gestion des statistiques commerciales d’un magasin d’optique. En cours de réalisation...',
 		/*demoURL: '',*/
+		slug: 'optitop',
 		repoURL: 'https://github.com/joyhure/Optitop',
-		anim: 'fade-right',
+		anim: 'fade-up',
 	},/*
 	{
 		imgSrc: `${base}img/optilourde.png`,

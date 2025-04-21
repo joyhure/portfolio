@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/BTSLayout.astro';
+import { portafolioData } from '../../components/data/portfolioData';
+import "../../styles/global.css"
+import Optitop from '../../content/projects/optitop.astro';
+
+export function getStaticPaths() {
+    return portafolioData.map((project) => ({
+        params: { slug: project.slug },
+        props: { project },
+    }));
+}
+
+const { project } = Astro.props;
+---
+
+<Layout title={project.title}>
+    <main class="self-center w-full pt-[13rem]">
+        <div class="page__container">
+            {project.slug === 'optitop' && <Optitop />}
+        </div>
+    </main>
+</Layout>
