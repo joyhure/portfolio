@@ -1,5 +1,22 @@
 ---
 import type { CollectionEntry } from "astro:content";
+
+interface Props {
+    title: string;
+    hideTitle?: boolean;
+    slug?: string;
+    project?: Project;  // Ajout de la propriété project optionnelle
+}
+
+interface Project {
+    slug?: string;
+    title: string;
+    // autres propriétés de votre projet...
+}
+
+// Destructuration des props avec une valeur par défaut pour slug
+const { title, hideTitle = false, slug = '', project } = Astro.props;
+
 import {  menuBTS } from "../components/data/menuData";
 import "../styles/global.css"
 import Header from "../components/header/Header.astro";
@@ -10,7 +27,14 @@ import Stages from "../content/bts/Stages.astro";
 import Realisations from "../content/bts/Realisations.astro";
 import Title from "../components/atoms/Title.astro";
 
-const { title, slug } = Astro.props;
+// Modifier la logique pour masquer le titre sur les pages spécifiques
+const hideTitleForPages = ["stages", "realisations"];
+const shouldHideTitle = hideTitle || hideTitleForPages.includes(slug);
+
+// Récupérer le slug soit depuis project soit directement des props
+const projectSlug = project?.slug;
+const currentSlug = projectSlug || slug;
+
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -18,7 +42,7 @@ const base = import.meta.env.BASE_URL;
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={title} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" href={`${base}img/favicon.png`} type="image/png">
 		<meta name="generator" content={Astro.generator} />
@@ -34,12 +58,12 @@ const base = import.meta.env.BASE_URL;
     <title>{title}</title>
   </head>
   <body>
-    <Header  origin={menuBTS} name="Joy Huré"/>
-    <main class="w-full flex flex-col justify-between  items-center pt-[13rem]" >
-      {slug !== "stages" && (
-      <div class="text-center" >
-        <Title contenu={title} />
-      </div>
+    <Header origin={menuBTS} name="Joy Huré"/>
+    <main id={slug} class="w-full flex flex-col justify-between items-center pt-[13rem]">
+      {!shouldHideTitle && (
+        <div class="text-center">
+          <Title contenu={title} />
+        </div>
       )}
       <section class="flex flex-col md:max-w-[100%]  max-w-[100%] min-w-[30rem]  px-20 justify-center w-[80%">
         {slug === "tableau" && <Tableau {...Astro.props} />}
@@ -67,8 +91,4 @@ main {
     flex-direction: column;
     justify-content: flex-start;
   }
-
-  section {
-		width: 100%;
-	}
 </style>

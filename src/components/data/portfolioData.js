@@ -19,7 +19,7 @@ const base = import.meta.env.BASE_URL;
 export const portafolioData = [
 	{
 		imgSrc: `${base}img/optiweb.png`,
-		title: 'Optitop : L\'application web',
+		title: 'Optitop',
 		skills: ['Bootstrap', 'JavaScript', 'PHP', 'Java', 'Springboot', 'mySQL'],
 		description:
 			'Une plateforme web conçue pour automatiser la gestion des statistiques commerciales d’un magasin d’optique. En cours de réalisation...',
