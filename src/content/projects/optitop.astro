@@ -4,7 +4,28 @@ import '../../styles/global.css';
 const base = import.meta.env.BASE_URL;
 ---
 
-<iframe id="optitop" src={`${base}docs/Optitop_portfolio.pdf`}></iframe>
+<div id="optitop-container" class="pdf-content">
+    <iframe id="optitop" src={`${base}docs/Optitop_portfolio.pdf`}></iframe>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const hash = window.location.hash;
+        const base = `${import.meta.env.BASE_URL || '/'}`;
+        
+        if (hash.startsWith('#optitop-page-')) {
+            const page = hash.split('-')[2];
+            const iframe = document.getElementById('optitop') as HTMLIFrameElement;
+            if (iframe && page) {
+                iframe.src = `${base}docs/Optitop_portfolio.pdf#page=${page}`;
+                const optitopContainer = document.getElementById('optitop-container');
+                if (optitopContainer) {
+                    optitopContainer.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+    });
+</script>
 
 <style>
 	iframe {
