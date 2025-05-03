@@ -6,7 +6,7 @@ const base = import.meta.env.BASE_URL;
 
 
 	<div id="iknae-container" class="pdf-content">
-		<iframe id="iknae" src={`${base}docs/Stage_Iknae.pdf`}></iframe>
+		<iframe id="iknae" src={`${base}docs/Stage_Iknae.pdf#zoom=100`}></iframe>
 		<div class="text">
 			<h1>1er stage : IKNAE Techno</h1>
 			<h2 class="text-xx-large">Compétences mises en oeuvre :</h2>
@@ -21,7 +21,7 @@ const base = import.meta.env.BASE_URL;
 		</div>
 	</div>
 	<div id="thanksboss-container" class="pdf-content">
-		<iframe id="thanksboss" src={`${base}docs/Stage_ThanksBoss.pdf`}></iframe>
+		<iframe id="thanksboss" src={`${base}docs/Stage_ThanksBoss.pdf#zoom=100`}></iframe>
 		<div class="text">
 			<h1>2eme stage : Thanks-boss</h1>
 			<h2 class="text-xx-large">Compétences mises en oeuvre :</h2>
@@ -66,9 +66,10 @@ const base = import.meta.env.BASE_URL;
 	  </script>
 
 <style scoped>
+	
 	iframe {
-		width: 750px;
-		height: 1040px;
+		width: 870px;
+		height: 1173px;
 		border: none;
 	}
 	.pdf-content {
@@ -82,7 +83,7 @@ const base = import.meta.env.BASE_URL;
 	.text {
 		width: 40%;
 		margin-inline: 2rem;
-		padding-top: 8rem;
+		padding-top: 3rem;
 	}
 
 	li{

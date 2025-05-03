@@ -4,9 +4,8 @@ import '../../styles/global.css';
 const base = import.meta.env.BASE_URL;
 ---
 
-
 <div id="aa-container" class="pdf-content">
-    <iframe id="aa" src={`${base}docs/Rapport_AA.pdf`}></iframe>
+    <iframe id="aa" src={`${base}docs/Rapport_AA.pdf#zoom=100`}></iframe>
     <div class="text">
         <h1>Activités Professionnelles : Alain Afflelou</h1>
         <h2 class="text-xx-large">Compétences mises en oeuvre :</h2>
@@ -14,22 +13,6 @@ const base = import.meta.env.BASE_URL;
         <ul>
             <li><h3>Gérer le patrimoine informatique : </h3>Recensement du parc informatique.</li>
         </ul>
-    </div>
-</div>
-<div id="thanksboss-container" class="pdf-content">
-    <iframe id="thanksboss" src={`${base}docs/Stage_ThanksBoss.pdf`}></iframe>
-    <div class="text">
-        <h1>2eme stage : Thanks-boss</h1>
-        <h2 class="text-xx-large">Compétences mises en oeuvre :</h2>
-        <p class="competences">
-        <ul>
-            <li><h3>Répondre aux incidents et aux demandes d’assistance et d’évolution : </h3>Identification et documentation des anomalies lors des tests en préproduction et production, proposition de correctifs pour résoudre les dysfonctionnements.</li>
-            <li><h3>Développer la présence en ligne de l'organisation : </h3>Création de pages Web dynamiques, contribution à l’évolution de la plateforme en intégrant de nouvelles fonctionnalités interactives et responsives, ajout de fonctionnalités enrichissant l’expérience utilisateur sur le site Web.</li>
-            <li><h3>Travailler en mode projet : </h3>Organisation et suivi des tâches sous forme de tickets pour structurer les activités, collaboration sur le développement des pages Web en utilisant une approche itérative et le partage des responsabilités entre coéquipiers, gestion des versions avec Git, évaluation des écarts entre les fonctionnalités attendues et les résultats observés.</li>
-            <li><h3>Mettre à disposition des utilisateurs un service informatique : </h3>Réalisation de tests en conditions réelles pour valider le bon fonctionnement des fonctionnalités, déploiement de données fictives pour simuler des parcours utilisateurs et valider les comportements attendus, tests des pages développées pour garantir leur compatibilité et leur stabilité.</li>
-            <li><h3>Organiser son développement professionnel : </h3>Mise en œuvre d’outils de gestion de version (Git) et de coordination des tâches, amélioration des compétences en développement Web et des pratiques de gestion en mode collaboratif, renforcement de la capacité à organiser et documenter le travail dans un environnement professionnel.</li>
-        </ul>
-    </p>
     </div>
 </div>
 
@@ -63,8 +46,8 @@ const base = import.meta.env.BASE_URL;
 
 <style scoped>
 iframe {
-    width: 750px;
-    height: 1040px;
+    width: 870px;
+    height: 1172px;
     border: none;
 }
 .pdf-content {
@@ -78,7 +61,7 @@ iframe {
 .text {
     width: 40%;
     margin-inline: 2rem;
-    padding-top: 8rem;
+    padding-top: 3rem;
 }
 
 li{

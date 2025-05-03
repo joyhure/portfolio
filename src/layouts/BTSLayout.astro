@@ -59,7 +59,7 @@ const base = import.meta.env.BASE_URL;
   </head>
   <body>
     <Header origin={menuBTS} name="Joy Huré"/>
-    <main id={slug} class="w-full flex flex-col justify-between items-center pt-[13rem]">
+    <main id={slug} class="w-full flex flex-col justify-between items-center">
       {!shouldHideTitle && (
         <div class="text-center">
           <Title contenu={title} />
@@ -91,4 +91,13 @@ main {
     flex-direction: column;
     justify-content: flex-start;
   }
+
+#stages, #realisations {
+    padding-top: 8rem;
+}
+
+#tableau, #competences {
+    padding-top: 11rem;
+}
+
 </style>
