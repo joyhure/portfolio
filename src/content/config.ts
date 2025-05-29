@@ -1,13 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+// Configuration des collections de contenu Astro
+// Actuellement vide - les données sont gérées via menuData.js et composants Astro
 
-const bts = defineCollection({
-	// Type-check frontmatter using a schema
-	schema: z.object({
-		title: z.string(),
-		description: z.string().optional(),
-		heroImage: z.string(),
-		position: z.number(),
-	}),
-});
-
-export const collections = { bts };
+export const collections = {};
