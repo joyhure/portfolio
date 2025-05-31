@@ -7,38 +7,76 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <Terminal nombre="joyH">
-	<div class="terminal__skills">
-		<h2>Stack Exploré</h2>
-		<div class="terminal__skills__container">
-			<TerminalIcon src={`${base}assets/html.svg`} color="#F5AE73" name="HTML" />
-
-			<TerminalIcon src={`${base}assets/css.svg`} color="#0090FF" name="CSS" />
-
-			<TerminalIcon src={`${base}assets/bootstrap.svg`} color="#AB4ABA" name="Bootstrap" />
-
-			<TerminalIcon src={`${base}assets/php.svg`} color="#8DA4EF" name="PHP" />
-
-			<TerminalIcon src={`${base}assets/javascript.svg`} color="#FFF394" name="Javascript" />
-
-			<TerminalIcon src={`${base}assets/vue.svg`} color="#3DD68C" name="Vue" />
-
-			<TerminalIcon src={`${base}assets/astro.svg`} color="#E239AA" name="Astro" />
-			
-			<TerminalIcon src={`${base}assets/python.svg`} color="#FFD60A" name="Python" />
-
-			<TerminalIcon src={`${base}assets/java.svg`} color="#EC6142" name="Java" />
-
-			<TerminalIcon src={`${base}assets/spring.svg`} color="#3DD68C" name="SpringBoot" />
-
-			<TerminalIcon src={`${base}assets/dart.svg`} color="#3B9EFF" name="Dart" />
-
-			<TerminalIcon src={`${base}assets/flutter.svg`} color="#7CE2FE" name="Flutter" />
-
-			<TerminalIcon src={`${base}assets/mysql.svg`} color="#FFD19A" name="MySQL" />
-
-			<TerminalIcon src={`${base}assets/postgresql.svg`} color="#8EC8F6" name="PostgreSQL" />
-
-
-		</div>
-	</div>
+    <div class="terminal__skills">
+        <h2>Stack Exploré</h2>
+        <div class="skills-carousel">
+            <button class="carousel-btn carousel-btn--prev" aria-label="Précédent">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            
+            <div class="skills-carousel__viewport">
+                <div class="terminal__skills__container">
+                    <TerminalIcon src={`${base}assets/html.svg`} color="#F5AE73" name="HTML" />
+                    <TerminalIcon src={`${base}assets/css.svg`} color="#0090FF" name="CSS" />
+                    <TerminalIcon src={`${base}assets/bootstrap.svg`} color="#AB4ABA" name="Bootstrap" />
+                    <TerminalIcon src={`${base}assets/php.svg`} color="#8DA4EF" name="PHP" />
+                    <TerminalIcon src={`${base}assets/javascript.svg`} color="#FFF394" name="Javascript" />
+                    <TerminalIcon src={`${base}assets/vue.svg`} color="#3DD68C" name="Vue" />
+                    <TerminalIcon src={`${base}assets/astro.svg`} color="#E239AA" name="Astro" />
+                    <TerminalIcon src={`${base}assets/python.svg`} color="#FFD60A" name="Python" />
+                    <TerminalIcon src={`${base}assets/java.svg`} color="#EC6142" name="Java" />
+                    <TerminalIcon src={`${base}assets/spring.svg`} color="#3DD68C" name="SpringBoot" />
+                    <TerminalIcon src={`${base}assets/dart.svg`} color="#3B9EFF" name="Dart" />
+                    <TerminalIcon src={`${base}assets/flutter.svg`} color="#7CE2FE" name="Flutter" />
+                    <TerminalIcon src={`${base}assets/mysql.svg`} color="#FFD19A" name="MySQL" />
+                    <TerminalIcon src={`${base}assets/postgresql.svg`} color="#8EC8F6" name="PostgreSQL" />
+                </div>
+            </div>
+            
+            <button class="carousel-btn carousel-btn--next" aria-label="Suivant">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
 </Terminal>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.querySelector('.terminal__skills__container') as HTMLElement;
+        const prevBtn = document.querySelector('.carousel-btn--prev') as HTMLButtonElement;
+        const nextBtn = document.querySelector('.carousel-btn--next') as HTMLButtonElement;
+        
+        if (!container || !prevBtn || !nextBtn) return;
+        
+        // Largeur d'un élément (95px) + gap (15px) = 110px
+        const scrollAmount = 110;
+        
+        prevBtn.addEventListener('click', () => {
+            container.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            container.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Masquer les boutons si pas besoin de scroll
+        function updateButtons() {
+            const { scrollLeft, scrollWidth, clientWidth } = container;
+            prevBtn.style.opacity = scrollLeft <= 0 ? '0.5' : '1';
+            nextBtn.style.opacity = scrollLeft >= scrollWidth - clientWidth ? '0.5' : '1';
+        }
+        
+        container.addEventListener('scroll', updateButtons);
+        updateButtons(); // Initial check
+    });
+</script>
