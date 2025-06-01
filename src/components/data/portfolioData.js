@@ -20,9 +20,9 @@ export const portafolioData = [
 	{
 		imgSrc: `${base}img/optiweb.png`,
 		title: 'Optitop',
-		skills: ['Bootstrap', 'JavaScript', 'PHP', 'Java', 'Springboot', 'mySQL'],
+		skills: ['Bootstrap', 'JavaScript','Springboot', 'Java', 'mySQL', 'Flutter', 'Dart'],
 		description:
-			'Une plateforme web conçue pour automatiser la gestion des statistiques commerciales d’un magasin d’optique. En cours de réalisation...',
+			'Deux applications (web et mobile) conçues pour automatiser la gestion des statistiques commerciales d’un magasin d’optique.',
 		/*demoURL: '',*/
 		slug: 'optitop',
 		repoURL: 'https://github.com/joyhure/Optitop',

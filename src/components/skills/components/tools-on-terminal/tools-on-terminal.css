@@ -46,6 +46,7 @@
     max-width: 660px;
     display: flex;
     justify-content: flex-start;
+    cursor: none;
 }
 
 /* ===================================
