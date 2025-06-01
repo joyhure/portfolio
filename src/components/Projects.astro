@@ -2,11 +2,13 @@
 import Title from './atoms/Title.astro';
 import { getPortafolioData } from './data/portfolioData.js';
 import Card from './card-portfolio/CardPortfolio.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <section
     id="projects"
-    class="flex flex-col w-full h-full justify-start items-center h-auto min-h-[100dvh]"
+    class="flex flex-col w-full justify-start items-center min-h-[100dvh] relative"
 >
     <Title margin="2rem" contenu="Projets" class="title-centered" />
     
@@ -15,6 +17,13 @@ import Card from './card-portfolio/CardPortfolio.astro';
             {getPortafolioData.map((props) => <Card {...props} />)}
         </div>
     </div>
+
+    <!-- Avatar positionné de manière absolue -->
+    <img
+        class="absolute bottom-[8rem] left-[30rem] w-[40rem] h-auto pointer-events-none"
+        src={`${base}img/project_avatar2.png`}
+        alt="Avatar pointant vers le portfolio"
+    />
 </section>
 
 <script>
@@ -51,7 +60,8 @@ import Card from './card-portfolio/CardPortfolio.astro';
        =================================== */
     
     section {
-        padding-top: 15rem;
+        padding-top: 10rem;
+		margin-bottom: 10rem;
     }
 
     /* ===================================
@@ -73,4 +83,5 @@ import Card from './card-portfolio/CardPortfolio.astro';
         flex-wrap: wrap;
         gap: 4rem;
     }
+
 </style>
