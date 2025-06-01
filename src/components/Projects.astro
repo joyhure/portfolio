@@ -12,18 +12,17 @@ const base = import.meta.env.BASE_URL;
 >
     <Title margin="2rem" contenu="Projets" class="title-centered" />
     
-    <div class="portfolio__container">
+    <div class="portfolio__container relative">
         <div class="portfolio__elements">
             {getPortafolioData.map((props) => <Card {...props} />)}
         </div>
+        <img
+            class="absolute bottom-[-29rem] right-[24rem] w-[37rem] h-auto pointer-events-none z-10 max-w-[400px]"
+            src={`${base}img/project_avatar.png`}
+            alt="Avatar pointant vers le portfolio"
+        />
     </div>
 
-    <!-- Avatar positionné de manière absolue -->
-    <img
-        class="absolute bottom-[8rem] left-[30rem] w-[40rem] h-auto pointer-events-none"
-        src={`${base}img/project_avatar.png`}
-        alt="Avatar pointant vers le portfolio"
-    />
 </section>
 
 <script>
@@ -61,7 +60,7 @@ const base = import.meta.env.BASE_URL;
     
     section {
         padding-top: 10rem;
-		margin-bottom: 10rem;
+		margin-bottom: 20rem;
     }
 
     /* ===================================
