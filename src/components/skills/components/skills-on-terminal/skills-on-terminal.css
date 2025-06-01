@@ -1,61 +1,94 @@
-.terminal__skills h2 {
-	font-size: var(--text-xx-large);
-	font-weight: 600;
-	color: var(--secondary-90);
-	padding: 1.1rem 0;
-}
+/* ===================================
+   COMPOSANT PRINCIPAL - TERMINAL SKILLS
+   =================================== */
 
 .terminal__skills {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	padding: 1.1rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.1rem 0;
 }
+
+.terminal__skills h2 {
+    font-size: var(--text-xx-large);
+    font-weight: 600;
+    color: var(--secondary-90);
+    padding: 1.1rem 0;
+}
+
+/* ===================================
+   ÉLÉMENTS STACK - ICÔNES
+   =================================== */
 
 .stack {
-	width: 95px;
-	height: 95px;
+    width: 95px;
+    height: 95px;
 }
 
-/* Carousel styles */
+/* ===================================
+   CARROUSEL - STRUCTURE PRINCIPALE
+   =================================== */
+
 .skills-carousel {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1rem; /* 16px */
     position: relative;
     max-width: 100%;
+    justify-content: center;
 }
 
 .skills-carousel__viewport {
     flex: 1;
     overflow: hidden;
-    /* Largeur pour 6 éléments : 6 * (95px + 15px gap) = 660px */
     max-width: 660px;
+    display: flex;
+    justify-content: flex-start;
 }
 
-/* GARDEZ SEULEMENT CETTE DÉFINITION */
+/* ===================================
+   CONTAINER DE DÉFILEMENT
+   =================================== */
+
 .terminal__skills__container {
     display: flex;
     gap: 15px;
     overflow-x: auto;
     scroll-behavior: smooth;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     padding: 0.5rem 0;
-    /* PAS de flex-wrap, PAS de justify-content center */
+    /* Espacement symétrique : même valeur que le gap de .skills-carousel */
+    padding-left: 1rem; /* 16px - même que gap */
+    padding-right: 1rem; /* 16px - même que gap */
+    align-items: center;
 }
 
+/* Masquer la scrollbar sur WebKit */
 .terminal__skills__container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none;
 }
 
-/* Assurer que chaque TerminalIcon a une largeur fixe */
+/* Largeur fixe pour chaque élément du carrousel */
 .terminal__skills__container > * {
     flex-shrink: 0;
-    width: 95px; /* Correspond à la classe .stack */
+    width: 95px;
 }
+
+/* Retirer les marges supplémentaires */
+.terminal__skills__container > :first-child {
+    margin-left: 0;
+}
+
+.terminal__skills__container > :last-child {
+    margin-right: 0;
+}
+
+/* ===================================
+   BOUTONS DE NAVIGATION
+   =================================== */
 
 .carousel-btn {
     background: var(--terminal-background, #1a1a1a);
@@ -72,6 +105,7 @@
     flex-shrink: 0;
 }
 
+/* États du bouton */
 .carousel-btn:hover {
     background: var(--terminal-user-color, #CA88D1);
     color: var(--terminal-background, #1a1a1a);
@@ -83,20 +117,42 @@
     cursor: not-allowed;
 }
 
+/* ===================================
+   ICÔNES SVG DES BOUTONS
+   =================================== */
+
 .carousel-btn svg {
     width: 20px;
     height: 20px;
+    transition: transform 0.2s ease;
 }
 
-/* Responsive */
+.carousel-btn:hover svg {
+    transform: scale(1.1);
+}
+
+.carousel-btn svg path {
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.2s ease;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+/* Tablettes */
 @media (max-width: 768px) {
     .skills-carousel__viewport {
-        max-width: 440px; /* 4 éléments visibles sur mobile */
+        max-width: 440px; /* 4 éléments visibles */
     }
 }
 
+/* Mobile */
 @media (max-width: 480px) {
     .skills-carousel__viewport {
-        max-width: 330px; /* 3 éléments visibles sur très petit écran */
+        max-width: 330px; /* 3 éléments visibles */
     }
 }

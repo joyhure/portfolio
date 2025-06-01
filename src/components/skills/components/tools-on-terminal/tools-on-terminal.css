@@ -1,26 +1,158 @@
-.terminal__tools__container {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	justify-content: center;
-	gap: 2.2rem;
-	padding-block: 1.5rem;
-}
+/* ===================================
+   COMPOSANT PRINCIPAL - TERMINAL TOOLS
+   =================================== */
+
 .terminal__tools {
-	padding: 1.1rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1.1rem 0;
 }
 
 .terminal__tools h2 {
-	font-size: var(--text-xx-large);
-	font-weight: 600;
-	color: var(--secondary-90);
-	padding: 1.1rem 0;
+    font-size: var(--text-xx-large);
+    font-weight: 600;
+    color: var(--secondary-90);
+    padding: 1.1rem 0;
 }
 
-.terminal__tools {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+/* ===================================
+   ÉLÉMENTS STACK - ICÔNES
+   =================================== */
+
+.stack {
+    width: 95px;
+    height: 95px;
+}
+
+/* ===================================
+   CARROUSEL - STRUCTURE PRINCIPALE
+   =================================== */
+
+.tools-carousel {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* 16px */
+    position: relative;
+    max-width: 100%;
+    justify-content: center;
+}
+
+.tools-carousel__viewport {
+    flex: 1;
+    overflow: hidden;
+    max-width: 660px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* ===================================
+   CONTAINER DE DÉFILEMENT
+   =================================== */
+
+.terminal__tools__container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0.5rem 0;
+    /* Espacement symétrique : même valeur que le gap de .tools-carousel */
+    padding-left: 1rem; /* 16px - même que gap */
+    padding-right: 1rem; /* 16px - même que gap */
+    align-items: center;
+}
+
+/* Masquer la scrollbar sur WebKit */
+.terminal__tools__container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Largeur fixe pour chaque élément du carrousel */
+.terminal__tools__container > * {
+    flex-shrink: 0;
+    width: 95px;
+}
+
+/* Retirer les marges supplémentaires */
+.terminal__tools__container > :first-child {
+    margin-left: 0;
+}
+
+.terminal__tools__container > :last-child {
+    margin-right: 0;
+}
+
+/* ===================================
+   BOUTONS DE NAVIGATION
+   =================================== */
+
+.carousel-btn {
+    background: var(--terminal-background, #1a1a1a);
+    border: 1px solid var(--terminal-user-color, #CA88D1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--terminal-user-color, #CA88D1);
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+/* États du bouton */
+.carousel-btn:hover {
+    background: var(--terminal-user-color, #CA88D1);
+    color: var(--terminal-background, #1a1a1a);
+    transform: scale(1.1);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* ===================================
+   ICÔNES SVG DES BOUTONS
+   =================================== */
+
+.carousel-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease;
+}
+
+.carousel-btn:hover svg {
+    transform: scale(1.1);
+}
+
+.carousel-btn svg path {
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.2s ease;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+/* Tablettes */
+@media (max-width: 768px) {
+    .tools-carousel__viewport {
+        max-width: 440px; /* 4 éléments visibles */
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .tools-carousel__viewport {
+        max-width: 330px; /* 3 éléments visibles */
+    }
 }
