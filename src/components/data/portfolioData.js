@@ -4,7 +4,6 @@
  * @property {string} title Titre de la carte
  * @property {string[]} skills Tableau de tes compétences, par exemple : ['React', 'CSS', 'JavaScript']
  * @property {string} description La description de la carte
- * @property {string} demoURL URL d'une démonstration
  * @property {string} repoURL URL du dépôt
  * @property {string} slug Identifiant unique du projet pour le routing, par exemple : 'optitop'
  * @property {string} anim L'animation qui sera exécutée lors du chargement de la carte, par exemple : fade-up, fade-right, fade-left, fade-down
