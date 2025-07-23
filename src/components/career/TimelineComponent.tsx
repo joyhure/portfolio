@@ -35,9 +35,44 @@ export const App: FC<{ name: string }> = ({ name }) => {
           <div className="timelineItem">
             <h3>BTS SIO SLAM</h3>
             <p>
-              Préparation du BTS SIO SLAM avec l'école STUDI.
+              Obtention du BTS SIO SLAM en un an avec l'école STUDI.
             </p>
-            <h3>Opticienne Manager</h3>
+          </div>
+        </TimelineItem>
+        <TimelineItem
+          dotStyle={{
+            width: '16px',
+            height: '16px',
+            background: 'none',
+          }}
+          dotIcon={<img src={dotIcon} alt="dotIcon" />}
+          dotColor="none"
+          dotText={<h1 className="timelineItemDotText">2025</h1>}
+          place="opposite"
+        >
+          <div className="timelineItem">
+            <h3 className="timelineItemOpposite">Stage chez Iknae Techno</h3>
+            <p className="timelineItemOpposite">
+              Stage du BTS SIO SLAM : 7 semaines au sein de l'entreprise Iknae Techno, spécialisée dans l'expertise de bases de données.
+            </p>
+            <h3 className="timelineItemOpposite">Stage chez Thanks-boss</h3>
+            <p className="timelineItemOpposite">
+              Stage du BTS SIO SLAM : 4 semaines au sein de l'entreprise Thanks-boss, start-up créatrice d'une application novatrice de mise en relation des employeurs avec les candidats guidée par l'IA.
+            </p>
+          </div>
+        </TimelineItem>
+        <TimelineItem
+          dotStyle={{
+            width: '16px',
+            height: '16px',
+            background: 'none',
+          }}
+          dotIcon={<img src={dotIcon} alt="dotIcon" />}
+          dotColor="none"
+          dotText={<h1 className="timelineItemDotText">2024</h1>}
+        >
+          <div className="timelineItem">
+            <h3>Opticienne Manager (à aujourd'hui)</h3>
             <p>
               Manager du magasin Afflelou de Fréjus.
             </p>
