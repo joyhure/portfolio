@@ -39,9 +39,9 @@
 	max-width: 70.19rem;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 767px) {
 	.about__container {
-		padding: 8rem 3.1rem;
+		padding: 8rem 0;
 		flex-direction: column-reverse;
 		align-items: center;
 	}

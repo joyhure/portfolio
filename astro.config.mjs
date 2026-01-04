@@ -8,6 +8,10 @@ export default defineConfig({
   site: 'https://joyhure.github.io/portfolio',
   base: '/portfolio',
   trailingSlash: "always",
+    server: {
+    host: true,  // Expose le serveur sur le réseau local
+    port: 4321
+  },
   devToolbar: {
     enabled: false
   },

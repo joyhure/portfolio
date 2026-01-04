@@ -9,7 +9,6 @@
 .career__container {
 	display: flex;
 	padding: 11rem 13.1rem;
-	/* flex-wrap: wrap; */
 	justify-content: space-around;
 	gap: 4.4rem;
 }
@@ -40,9 +39,9 @@
 	max-width: 70.19rem;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 767px) {
 	.career__container {
-		padding: 8rem 3.1rem;
+		padding: 8rem 0;
 		flex-direction: column-reverse;
 		align-items: center;
 	}

@@ -9,16 +9,17 @@
 .skills__container {
 	display: flex;
 	flex-direction: column;
-	padding: 6rem 13.1rem;
 	justify-content: space-around;
 	gap: 4.4rem;
+	box-sizing: border-box;
+	width: 80%;
 }
 
 #skills {
 	display: flex;
 	max-width: calc(var(--max-width) + 2.2rem);
-	padding: 10rem 1.1rem;
-	gap: 2.2rem;
+	padding-top: 13rem;
+	padding-bottom: 10rem;
 	margin-inline: auto;
 }
 
@@ -31,11 +32,14 @@
 	gap: 1.1rem;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 767px) {
 	#skills {
 		flex-direction: column-reverse;
 	}
 	#skills .text-content {
 		max-width: 100%;
+	}
+	.skills .skills__container{
+		width: 100%;
 	}
 }
