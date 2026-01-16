@@ -92,6 +92,8 @@ header .profile .header__title {
 	.header .header__container {
 		border-radius: 0;
 		min-height: 5.5rem;
+		justify-content: space-between;
+		align-items: center;
 	}
 	
 	.header .links {
@@ -100,7 +102,7 @@ header .profile .header__title {
 		justify-content: center;
 		align-items: flex-end;
 		right: 0;
-		top: 0;
+		top: 5.5rem; /* Position sous le header */
 		align-self: center;
 		flex-direction: column;
 	}
@@ -109,31 +111,22 @@ header .profile .header__title {
 		margin-right: 0;
 		z-index: 2;
 		background: #1c0544;
-		justify-content: center;
+		justify-content: flex-start;
 		align-items: center;
-		border-radius: 14px;
 		width: 100%;
 		padding: 0.8rem 1rem;
-		border: 1px solid #dc5898;
+		border: 0.03px solid #7c39fd47;
 		align-self: center;
 		opacity: 0;
 		pointer-events: none;
 		flex-direction: column;
+		transition: opacity 0.3s ease; /* Ajout d'une transition */
 	}
 
-	.links:focus-within .header__list {
+	/* Remplacez les anciennes règles focus-within par la classe active */
+	.header__list.active {
 		opacity: 1;
 		pointer-events: all;
-	}
-
-	.links:focus-within .menu__btn {
-		opacity: 0;
-		pointer-events: none;
-	}
-
-	.links:not(:hover) .header__list {
-		opacity: 0;
-		pointer-events: none;
 	}
 
 	.icon__container {
@@ -153,13 +146,13 @@ header .profile .header__title {
 		padding: 0.5rem 2rem;
 		font-size: var(--text-x-large);
 		transition: 0.35s opacity;
-		max-width: -moz-max-content;
 		max-width: max-content;
 		color: #E8C5ED;
-		position: absolute;
 		pointer-events: all;
 		animation: linear scroll-btn;
 		animation-timeline: scroll();
+		z-index: 3;
+		order: 2;
 	}
 }
 
