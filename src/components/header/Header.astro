@@ -50,4 +50,29 @@ import Logo from '../Logo.astro';
             menuList?.classList.remove('active');
         }
     });
+
+    // Effet néon sur les liens du menu + fermer le menu
+    const menuLinks = document.querySelectorAll('.menu__link');
+    
+    menuLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            const target = event.currentTarget as HTMLElement;
+            
+            // Retirer la classe de tous les liens
+            menuLinks.forEach(l => l.classList.remove('neon-active'));
+            
+            // Ajouter la classe au lien cliqué
+            target.classList.add('neon-active');
+            
+            // Fermer le menu mobile après l'animation (600ms + petit délai)
+            setTimeout(() => {
+                menuList?.classList.remove('active');
+            }, 300);
+            
+            // Retirer la classe après l'animation
+            setTimeout(() => {
+                target.classList.remove('neon-active');
+            }, 600);
+        });
+    });
 </script>
