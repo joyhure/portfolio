@@ -54,19 +54,16 @@
 	--font-montserrat: 'Montserrat', sans-serif;
 	--max-width: 108rem;
 	--site-bg: var(--primary-0);
-	--hero-bg: linear-gradient(
-		-54deg,
-		var(--primary-0) -23%,
-		var(--primary-20),
-		var(--primary-0) 51%
-	);
+	--hero-bg: linear-gradient(-54deg,
+			var(--primary-0) -23%,
+			var(--primary-20),
+			var(--primary-0) 51%);
 
-	--text-gradient: radial-gradient(
-		circle farthest-corner at center center,
-		#58f9ff 0%,
-		#df44e7 100%
-	);
+	--text-gradient: radial-gradient(circle farthest-corner at center center,
+			#58f9ff 0%,
+			#df44e7 100%);
 }
+
 * {
 	box-sizing: border-box;
 	max-width: 100vw;
@@ -77,6 +74,7 @@ html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
 }
+
 body {
 	width: 100%;
 	max-width: 100vw;
@@ -85,10 +83,12 @@ body {
 	margin: 0;
 	padding: 0;
 }
+
 main {
 	align-self: center;
 }
-p{
+
+p {
 	color: var(--primary-100);
 	font-size: var(--text-general);
 }
@@ -105,14 +105,14 @@ p{
 }
 
 /*Titles*/
-h1{
+h1 {
 	font-size: var(--text-xx-large);
 	color: #D058EA;
 }
 
 h2 {
 	font-size: var(--text-x-large);
-	
+
 	color: #97A5F4;
 }
 
@@ -120,4 +120,19 @@ h3 {
 	font-size: var(--text-large);
 	color: #70B8FF;
 
+}
+
+/* Mobile responsive titles */
+@media (max-width: 767px) {
+    h1 {
+        font-size: var(--text-large); /* ou var(--text-medium) selon vos préférences */
+    }
+    
+    h2 {
+        font-size: var(--text-medium);
+    }
+    
+    h3 {
+        font-size: var(--text-small);
+    }
 }

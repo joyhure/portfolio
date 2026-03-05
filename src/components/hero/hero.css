@@ -69,28 +69,47 @@ h1 {
 	max-width: 80%;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 767px) {
 	.hero {
-		padding: 12rem 0 5rem 0;
+		padding: 2rem 2rem 8rem 2rem; /* Padding bottom pour compenser le ::after */
+		justify-content: center;
+		height: 100vh;
+		min-height: 100dvh;
+		box-sizing: border-box;
 	}
+
 	.hero .hero__img {
-		max-width: 28rem;
+		height: 20vh;
+		align-self: center;
+		width: auto;
 	}
+
 	.hero .hero__container {
 		display: flex;
 		max-width: 100%;
-		gap: 0;
 		flex-direction: column-reverse;
-		justify-content: center;
+		justify-content: start;
 		align-items: center;
+		box-sizing: border-box;
+		max-height: 100%;
+		gap: 1rem;
 	}
+
 	.hero .text__content {
 		align-items: center;
+		justify-content: space-between;
+		gap: 5dvh;
 	}
 
 	.hero .hero__text {
 		font-size: var(--text-x-large);
 		text-align: center;
+		margin: 0 1rem;
+	}
+
+	.hero__container .text__content .hero__title {
+		font-size: clamp(1rem, 4vh, 3rem);
+        line-height: 1.2;
 	}
 }
 
@@ -98,9 +117,11 @@ h1 {
 	0% {
 		background-size: 200%;
 	}
+
 	50% {
 		background-position: 70%;
 	}
+
 	100% {
 		background-size: 100%;
 	}
