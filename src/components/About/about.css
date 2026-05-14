@@ -2,15 +2,23 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 1rem;
 	width: 100%;
 }
 
 .about__container {
+	height: 100vh;
+    min-height: 100dvh;
 	display: flex;
-	padding: 20rem 13.1rem;
 	justify-content: space-around;
+	align-items: center;
 	gap: 4.4rem;
+}
+
+.img__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
 }
 
 .about__img {

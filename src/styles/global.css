@@ -125,7 +125,7 @@ h3 {
 /* Mobile responsive titles */
 @media (max-width: 767px) {
     h1 {
-        font-size: var(--text-large); /* ou var(--text-medium) selon vos préférences */
+        font-size: var(--text-large); 
     }
     
     h2 {
